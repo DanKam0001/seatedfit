@@ -41,7 +41,7 @@ Warned, for a person to look at: long puffer on m2_studio (7.5%) and m3_home (12
 ## What this does not show
 
 - Passing means the picture passed these checks, not that the garment is safe to wear in a wheelchair. Some long coats passed because they hang between the wheels in that pose.
-- The wheel regions are hand-marked for the six sample photos, so the wheel and chair checks do not run on uploads.
+- The saved matrix uses wheel regions marked by hand on the six sample photos. Uploads use the shopper's own marks, measured below.
 - Thresholds were tuned on the same 48 renders. There's no held-out set, and no wheelchair user has reviewed the results.
 - Clearance is a 2D picture measure, not a physical one.
 
@@ -78,17 +78,55 @@ Unchanged from the first values:
 
 ## Automatic wheel finding: failed, turned off
 
-From `locator_eval.json`. Against the hand marks, it found 2 of 23 wheels and returned 15 false positives. Scoring uploads against wrong regions would be worse than not scoring them, so uploads report the wheel and chair checks as "not measured" and can't reach a full pass.
+From `locator_eval.json`. Against the hand marks, it found 2 of 23 wheels and returned 15 false positives. Scoring uploads against wrong regions would be worse than not scoring them, so the shopper marks each wheel instead. With no marks, uploads report the wheel and chair checks as "not measured" and can't reach a full pass.
+
+## Wheels marked by the shopper
+
+From `marked_wheels_proof.json`, `marked_wheels_sample.json` and `marked_wheels/`. One sample photo (m2_studio) was sent down the upload path through the real marking control in a browser: one mark by mouse, one by keyboard, two by slider. The marks were read by eye off the photo, and `regions.json` was not used.
+
+| Run | Long wool coat | Cropped jacket |
+|---|---|---|
+| Upload path, fresh paid render, marked wheels | Refused, 61.26% of a wheel | Passed, 0% |
+| Sample button, saved render, marked wheels | Refused, 64.35% | Passed, 0% |
+| Saved matrix, hand-marked regions | Refused, 59.3% | Passed, 0% |
+
+The verdict matched, but the percentage moves with the marks and the render. `screenshots/06_marked_wheels_result.png`, with slightly different marks and big wheels only, reads 70.5% for the same coat.
+
+### How much marking error matters
+
+From `marked_wheels_eval.json`. Every saved render was rechecked with wheels only, as an upload has, using simulated marks: the eye marks moved at random and resized. Each is compared with the same wheels-only check at no error. No real shopper's marks were measured, and the mark tolerance below was chosen on these same photos.
+
+| Largest move, share of picture | Runs | Same verdict | Refused became passed | Passed became refused |
+|---|---|---|---|---|
+| 0 | 48 | 48 | 0 | 0 |
+| 1% | 192 | 181 | 0 | 0 |
+| 2% | 192 | 154 | 0 | 0 |
+| 4% | 192 | 96 | 0 | 1 |
+
+Size changed by up to four times the move. A careful hand holds up, but a loose one often changes the verdict, and at 4% half of them did.
+
+A mark must sit on a real outline to earn a pass: within 12 pixels, at least 0.40 of its rim on an edge (`mark_support`). All 11 real wheels clear that, the lowest at 0.417, as do all 12 casters. 6 of 184 marks thrown at places that aren't wheels also clear it, so a stray mark can occasionally get through this test.
+
+## Skin tone and colour contrast
+
+From `feature_cost.json`, `skin_tone.json` and `youcam_calls.jsonl`.
+
+- The feature-cost list gives 20 units for one facial colour reading. One test was spent, and it succeeded first time on a face crop of m2_studio with angle strictness low: skin colour #74523c. The local estimate on the same face is #895946, so the two are visibly apart.
+- The endpoint used is `task/skin-tone-analysis`, because that is the one that lists colours in the docs and the cost list. `task/face-attr-analysis` in the brief doesn't.
+- The reading also returned a hair colour, which looks unreliable on an upscaled crop, so only skin colour is used.
+- The other five samples use the local estimate, because a reading each would have broken this pass's 40-unit limit. The page labels which is which.
+- Contrast is CIEDE2000 distance between skin colour and the garment's main colour. It orders the list and nothing else: the check results don't use it.
 
 ## API use
 
 From `summary.json` and `youcam_calls.jsonl`.
 
-- 50 tasks in the ledger, against a build limit of 120. 49 succeeded, none reported failure, and no error codes were recorded.
+- 53 tasks in the ledger, against a build limit of 120. 52 succeeded, none reported failure, and no error codes were recorded.
 - The other task is a hand-written correction row: a logging bug raised an error straight after a task was created, so its result was lost. It's counted because it was probably charged.
-- One of the 49 is the real upload run through the app's own route (`live_path_check.json`): verdict warn, wheel checks not measured, face and change passed.
+- The 3 newest are the skin tone test (20 units) and the two marked-wheels proof renders (2 units each): 24 units in that pass. Unit costs for the first 50 tasks weren't recorded.
+- One of the 52 is the real upload run through the app's own route (`live_path_check.json`): verdict warn, wheel checks not measured, face and change passed.
 - Dollar spend isn't known, because the ledger holds no prices.
 
 ## Accessibility
 
-From `accessibility.json`. Axe (WCAG 2.0 and 2.1, A and AA) found 0 violations on the shopper, retailer and how-it-works views at 1280 and 390 pixels wide, with no sideways scrolling. The keyboard walk opened and closed the detail dialog and changed the garment with arrow keys. Screenshots are in `screens/`.
+From `accessibility.json`. Axe (WCAG 2.0 and 2.1, A and AA) found 0 violations on the shopper, retailer and how-it-works views and the wheel marker at 1280 and 390 pixels wide, with no sideways scrolling. The first screen's heading, pictures and button fit without scrolling at both widths. The keyboard walk opened and closed the detail dialog, changed the garment with arrow keys, and added, moved, resized and deleted a mark. A touch run placed a mark by tap and moved it by drag. Screens are in `screens/`, and submission screenshots in `screenshots/`.

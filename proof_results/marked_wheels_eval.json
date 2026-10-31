@@ -1,0 +1,158 @@
+{
+ "what": "Saved renders rechecked with wheels only, as an upload has, using jittered copies of the eye marks",
+ "jitter_is": "largest move as a share of the picture; size changes by up to four times that",
+ "mark_support": {
+  "threshold": 0.4,
+  "real_wheels": [
+   {
+    "model": "m1_studio",
+    "kind": "wheel",
+    "support": 0.764
+   },
+   {
+    "model": "m1_studio",
+    "kind": "wheel",
+    "support": 0.681
+   },
+   {
+    "model": "m1_studio",
+    "kind": "caster",
+    "support": 0.792
+   },
+   {
+    "model": "m1_studio",
+    "kind": "caster",
+    "support": 0.847
+   },
+   {
+    "model": "m2_studio",
+    "kind": "wheel",
+    "support": 0.597
+   },
+   {
+    "model": "m2_studio",
+    "kind": "wheel",
+    "support": 0.722
+   },
+   {
+    "model": "m2_studio",
+    "kind": "caster",
+    "support": 0.653
+   },
+   {
+    "model": "m2_studio",
+    "kind": "caster",
+    "support": 0.667
+   },
+   {
+    "model": "m3_home",
+    "kind": "wheel",
+    "support": 0.472
+   },
+   {
+    "model": "m3_home",
+    "kind": "wheel",
+    "support": 0.736
+   },
+   {
+    "model": "m3_home",
+    "kind": "caster",
+    "support": 0.5
+   },
+   {
+    "model": "m3_home",
+    "kind": "caster",
+    "support": 0.708
+   },
+   {
+    "model": "m4_home",
+    "kind": "wheel",
+    "support": 0.431
+   },
+   {
+    "model": "m4_home",
+    "kind": "wheel",
+    "support": 0.417
+   },
+   {
+    "model": "m4_home",
+    "kind": "caster",
+    "support": 0.819
+   },
+   {
+    "model": "m4_home",
+    "kind": "caster",
+    "support": 0.597
+   },
+   {
+    "model": "m5_outdoor",
+    "kind": "wheel",
+    "support": 0.708
+   },
+   {
+    "model": "m5_outdoor",
+    "kind": "wheel",
+    "support": 0.722
+   },
+   {
+    "model": "m5_outdoor",
+    "kind": "caster",
+    "support": 0.639
+   },
+   {
+    "model": "m5_outdoor",
+    "kind": "caster",
+    "support": 0.722
+   },
+   {
+    "model": "m6_side",
+    "kind": "wheel",
+    "support": 0.597
+   },
+   {
+    "model": "m6_side",
+    "kind": "caster",
+    "support": 0.653
+   },
+   {
+    "model": "m6_side",
+    "kind": "caster",
+    "support": 0.764
+   }
+  ],
+  "stray_marks": 184,
+  "stray_percentiles_50_75_90_95": [
+   0.035,
+   0.181,
+   0.306,
+   0.373
+  ],
+  "stray_passing_threshold": 6
+ },
+ "by_jitter": {
+  "0.0": {
+   "runs": 48,
+   "same_verdict": 48,
+   "fail_became_pass": 0,
+   "pass_became_fail": 0
+  },
+  "0.01": {
+   "runs": 192,
+   "same_verdict": 181,
+   "fail_became_pass": 0,
+   "pass_became_fail": 0
+  },
+  "0.02": {
+   "runs": 192,
+   "same_verdict": 154,
+   "fail_became_pass": 0,
+   "pass_became_fail": 0
+  },
+  "0.04": {
+   "runs": 192,
+   "same_verdict": 96,
+   "fail_became_pass": 0,
+   "pass_became_fail": 1
+  }
+ }
+}

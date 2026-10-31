@@ -13,7 +13,7 @@ import numpy as np
 from skimage.color import rgb2lab
 from skimage.metrics import structural_similarity
 
-from .regions import Regions
+from .regions import Regions, mark_support
 
 THRESHOLDS = {
     "change_delta_e": 14.0,  # colour distance that counts as a changed pixel
@@ -33,6 +33,7 @@ THRESHOLDS = {
     "hand_min_bare": 0.30,  # a hand box mostly under a sleeve is hidden, not altered
     "change_pass": 0.01,  # share of the frame that changed
     "change_fail": 0.003,
+    "mark_support": 0.40,  # share of a shopper's mark that must lie on a real edge in the photo
 }
 
 
@@ -128,7 +129,7 @@ def check_change(changed, regions: Regions) -> Check:
 def check_chair(src, res, changed, covered, regions: Regions, ssim) -> Check:
     if not regions.wheels:
         return Check("chair", "Wheelchair intact", "not_measured", None, "similarity",
-                     "We can only measure the chair on our sample photos so far. Please look at it yourself.", {})
+                     "No wheels were marked, so the chair was not compared. Please look at it yourself.", {})
     visible = regions.chair_mask & ~cv2.dilate(covered.astype(np.uint8), np.ones((9, 9), np.uint8)).astype(bool)
     if visible.sum() < 200:
         return Check("chair", "Wheelchair intact", "warn", None, "similarity",
@@ -145,7 +146,7 @@ def check_chair(src, res, changed, covered, regions: Regions, ssim) -> Check:
     st_dmg = _grade_low(damage, THRESHOLDS["damage_pass"], THRESHOLDS["damage_fail"])
     lost = worst_edges < THRESHOLDS["edges_kept_fail"]
     st = "fail" if "fail" in (st_sim, st_dmg) or lost else "warn" if "warn" in (st_sim, st_dmg) else "pass"
-    msg = {"pass": "The wheelchair matches your photo.",
+    msg = {"pass": "The wheels you marked match your photo." if regions.source == "shopper" else "The wheelchair matches your photo.",
            "warn": "Parts of the wheelchair look slightly different from your photo.",
            "fail": "The wheelchair was changed: parts of it no longer match your photo."}[st]
     if lost:
@@ -167,10 +168,19 @@ def skin_in_source(src_lab, regions: Regions) -> np.ndarray:
     return cv2.morphologyEx(m, cv2.MORPH_OPEN, np.ones((5, 5), np.uint8)) > 0
 
 
-def check_clearance(covered, regions: Regions, skin) -> Check:
+def unsupported_marks(src_rgb, regions: Regions) -> int:
+    """How many of a shopper's marks sit on nothing wheel-like. A mark on a bare
+    wall would be clear of any garment, so it must not earn a pass."""
+    if regions.source != "shopper":
+        return 0
+    edges = _edges(src_rgb).astype(np.uint8)
+    return sum(mark_support(edges, w) < THRESHOLDS["mark_support"] for w in regions.wheels)
+
+
+def check_clearance(covered, regions: Regions, skin, stray=0) -> Check:
     if not regions.wheels:
         return Check("clearance", "Wheel clearance", "not_measured", None, "share of wheel",
-                     "We can only measure wheel clearance on our sample photos so far. Please look at your wheels yourself.", {})
+                     "No wheels were marked, so clearance was not measured. Please look at your wheels yourself.", {})
     shares = []
     for w in regions.wheels:
         m = w.mask(regions.shape) & ~skin
@@ -179,13 +189,17 @@ def check_clearance(covered, regions: Regions, skin) -> Check:
     visible = regions.wheel_mask & ~skin
     overall = float((covered & visible).sum() / max(1, visible.sum()))
     st = _grade_low(worst, THRESHOLDS["clearance_pass"], THRESHOLDS["clearance_fail"])
+    if stray and st == "pass":
+        st = "warn"
     n = round(worst * 100)
-    msg = {"pass": "The garment stays clear of the wheels.",
+    msg = {"pass": "The garment stays clear of the wheels you marked." if regions.source == "shopper" else "The garment stays clear of the wheels.",
            "warn": f"The garment touches a wheel, covering {n}% of it. Check this before you buy.",
            "fail": f"The garment covers {n}% of a wheel. It could catch while you push."}[st]
+    if stray and st == "warn" and worst <= THRESHOLDS["clearance_pass"]:
+        msg = "A mark isn't on a clear wheel outline in your photo, so we can't call this clear. Check your marks."
     return Check("clearance", "Wheel clearance", st, round(worst, 4), "share of worst wheel", msg,
                  {"per_wheel": [{"kind": k, "share": round(s, 4)} for k, s in shares],
-                  "all_wheels_share": round(overall, 4)})
+                  "all_wheels_share": round(overall, 4), "marks_off_an_outline": stray})
 
 
 def check_person(ssim, regions: Regions, covered) -> Check:
@@ -210,6 +224,10 @@ def check_person(ssim, regions: Regions, covered) -> Check:
     msg = {"pass": "The face and hands match your photo.",
            "warn": "The face or hands look slightly different from your photo.",
            "fail": "The face or hands were altered, so this is not a fair picture of you."}[st]
+    if not regions.hands:  # uploads: hands aren't located, so don't claim them
+        msg = {"pass": "The face matches your photo. Hands were not compared.",
+               "warn": "The face looks slightly different from your photo. Hands were not compared.",
+               "fail": "The face was altered, so this is not a fair picture of you."}[st]
     return Check("person", "Face and hands", st, round(face, 3), "similarity", msg,
                  {"face": round(face, 3), "worst_hand": None if hand is None else round(hand, 3)})
 
@@ -225,7 +243,7 @@ def run_checks(src_rgb: np.ndarray, res_rgb: np.ndarray, regions: Regions) -> Re
     covered = garment_mask(res_lab, changed, colours)
     ssim = _ssim_map(src_rgb, res_rgb)
     skin = skin_in_source(src_lab, regions)
-    checks = [check_clearance(covered, regions, skin), check_chair(src_rgb, res_rgb, changed, covered, regions, ssim),
+    checks = [check_clearance(covered, regions, skin, unsupported_marks(src_rgb, regions)), check_chair(src_rgb, res_rgb, changed, covered, regions, ssim),
               check_person(ssim, regions, covered), check_change(changed, regions)]
     states = [c.status for c in checks]
     verdict = "fail" if "fail" in states else "warn" if "warn" in states or "not_measured" in states else "pass"

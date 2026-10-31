@@ -61,7 +61,6 @@ def garment_hex(garment: str) -> str:
     px = np.array(im)
     corners = np.vstack([px[:8, :8].reshape(-1, 3), px[-8:, -8:].reshape(-1, 3)])
     backdrop = np.median(corners, axis=0)
-    h, w = px.shape[:2]
     # a white shirt on a white backdrop is still a garment, so only join-to-the-edge pixels are backdrop
     near = (np.abs(px.astype(int) - backdrop).max(axis=2) < 10).astype(np.uint8)
     _, labels = cv2.connectedComponents(near)
@@ -89,6 +88,7 @@ def _saved() -> dict:
     return json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
 
 
+@lru_cache(maxsize=None)
 def sample_reading(model: str) -> dict:
     """YouCam's measured colour if one is saved for this sample, otherwise the free reading."""
     saved = _saved().get(model)

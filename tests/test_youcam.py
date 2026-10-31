@@ -24,7 +24,7 @@ class Fake:
 
     def request(self, method, url, headers=None, timeout=None, json=None):
         assert headers["Authorization"] == "Bearer tok"
-        if url.endswith("/file"):
+        if "/file" in url:
             return Resp(body={"data": {"files": [{"file_id": "f1", "requests": [{"url": "https://put", "headers": {}}]}]}})
         if method == "POST":
             self.creates += 1
@@ -108,3 +108,33 @@ def test_failed_task_records_its_code(tmp_path):
     with pytest.raises(YouCamError):
         client(tmp_path, fake).wait("t1")
     assert rows(tmp_path)[-1]["error_code"] == "error_pose"
+
+
+class ToneFake(Fake):
+    def request(self, method, url, headers=None, timeout=None, json=None):
+        self.last = (method, url, json)
+        if method == "GET":
+            return Resp(body={"data": {"task_status": "success", "results": {"color": {"skin_color": "#74523c"}}}})
+        return super().request(method, url, headers, timeout, json)
+
+
+def test_skin_tone_uses_its_own_paths_and_counts_against_the_cap(tmp_path):
+    fake = ToneFake()
+    got = client(tmp_path, fake).skin_tone(b"face", {"model": "m"})
+    assert got["skin_color"] == "#74523c" and "/task/skin-tone-analysis/" in fake.last[1]
+    made = [r for r in rows(tmp_path) if r["call"] == "task_create"]
+    assert len(made) == 1 and made[0]["units"] == 20
+    with pytest.raises(SpendStop):
+        client(tmp_path, ToneFake(), cap=1).skin_tone(b"face")
+
+
+def test_skin_tone_failure_raises(tmp_path):
+    bad = Resp(body={"data": {"task_status": "error", "error": "error_face_position_too_small"}})
+    with pytest.raises(YouCamError) as e:
+        client(tmp_path, Fake(polls=[bad])).skin_tone(b"face")
+    assert e.value.code == "error_face_position_too_small"
+
+
+def test_missing_skin_colour_is_an_error(tmp_path):
+    with pytest.raises(YouCamError):
+        client(tmp_path, Fake(polls=[Resp(body={"data": {"task_status": "success", "results": {"color": {}}}})])).skin_tone(b"f")

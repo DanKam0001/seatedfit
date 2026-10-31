@@ -1,8 +1,9 @@
 """Find the regions the render check looks at, from the source photo alone.
 
 Sample models use regions marked by eye (assets/regions.json). Uploads get a
-face only: find_wheels scored too poorly to trust (proof_results/locator_eval.json),
-so the wheel checks on an upload say "not measured" rather than guess.
+face, plus the wheels the shopper marks. find_wheels scored too poorly to trust
+(proof_results/locator_eval.json), so with no marks the wheel checks on an upload
+say "not measured" rather than guess.
 """
 from __future__ import annotations
 
@@ -38,7 +39,7 @@ class Ellipse:
 @dataclass
 class Regions:
     shape: tuple
-    source: str  # "marked" or "auto"
+    source: str  # "marked", "shopper" or "auto"
     face: tuple | None = None  # (x, y, w, h)
     wheels: list = field(default_factory=list)  # Ellipse
     footplates: list = field(default_factory=list)  # (x0, y0, x1, y1)
@@ -92,6 +93,12 @@ def rim_support(edges: np.ndarray, e: Ellipse, samples=72) -> float:
     return float(near[ys[inside], xs[inside]].sum() / samples)
 
 
+def mark_support(edges: np.ndarray, e: Ellipse, reach=12, step=6) -> float:
+    """rim_support, forgiving a hand that lands a few pixels off the wheel."""
+    return max(rim_support(edges, Ellipse(e.cx + dx, e.cy + dy, e.a, e.b, e.kind))
+               for dx in range(-reach, reach + 1, step) for dy in range(-reach, reach + 1, step))
+
+
 def _candidates(gray: np.ndarray) -> list:
     h, w = gray.shape
     out = []
@@ -133,6 +140,14 @@ def find_wheels(rgb: np.ndarray) -> list:
 def locate_auto(rgb: np.ndarray) -> Regions:
     faces = find_faces(rgb)
     return Regions(rgb.shape, "auto", face=faces[0] if faces else None)
+
+
+def locate_shopper(rgb: np.ndarray, marks: list) -> Regions:
+    """Marks are fractions of the picture: centre x and y, full width w and height h."""
+    h, w = rgb.shape[:2]
+    wheels = [Ellipse(m["x"] * w, m["y"] * h, m["w"] * w / 2, m["h"] * h / 2, m["kind"]) for m in marks]
+    faces = find_faces(rgb)
+    return Regions(rgb.shape, "shopper", face=faces[0] if faces else None, wheels=wheels)
 
 
 def locate_marked(model: str, rgb: np.ndarray) -> Regions:

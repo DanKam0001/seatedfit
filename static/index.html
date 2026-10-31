@@ -24,12 +24,16 @@
 <main id="main" tabindex="-1">
 
 <section id="view-shop" class="view">
-  <div class="intro">
-    <h1>Clothes, seen sitting down.</h1>
-    <p class="lede">Product photos show a garment on someone standing. SeatedFit puts it on a seated photo, then checks the picture before you trust it: is the wheelchair still whole, and does the hem reach the wheels?</p>
+  <div class="hero">
+    <div class="hero-text">
+      <h1>Will it catch in your wheels?</h1>
+      <p class="lede">Clothes on a seated photo, with the hem measured against the wheels.</p>
+      <a class="primary" href="#pick">Check a garment</a>
+    </div>
+    <div class="hero-pair" id="hero-pair"></div>
   </div>
 
-  <div class="step">
+  <div class="step" id="pick">
     <h2><span class="num">1</span> Choose a seated photo</h2>
     <fieldset class="rail models" id="model-rail">
       <legend class="sr">Sample models</legend>
@@ -39,12 +43,41 @@
       <label for="photo">Or use your own photo <span class="hint">JPG or PNG, up to 10 MB. Deleted when you leave, never stored.</span></label>
       <input id="photo" type="file" accept="image/jpeg,image/png">
       <button type="button" id="clear-photo" class="link" hidden>Remove my photo</button>
+      <button type="button" id="use-sample" class="link">No photo to hand? Use this sample as if it were yours</button>
     </div>
     <div id="photo-report" aria-live="polite"></div>
+
+    <section id="marker" class="marker" aria-labelledby="marker-title" hidden>
+      <h3 id="marker-title">Mark each wheel</h3>
+      <p class="note">We can't find wheels reliably on our own, so you show us. With no marks, the wheel checks say "not measured".</p>
+      <div class="marker-grid">
+        <div class="stage" id="stage">
+          <img id="stage-img" alt="Your photo, for marking the wheels." draggable="false">
+          <div id="marks"></div>
+        </div>
+        <div class="marker-tools">
+          <p class="hint" id="marker-help">Tap or click the photo to place the selected mark, or drag it. On a selected mark, arrow keys move it and Shift with arrow keys resizes it. Delete removes it.</p>
+          <p class="actions-row">
+            <button type="button" class="link-btn" id="add-wheel">Add a big wheel</button>
+            <button type="button" class="link-btn" id="add-caster">Add a small front wheel</button>
+          </p>
+          <div id="mark-sliders" hidden>
+            <label>Across <input type="range" id="s-x" min="0" max="100" step="0.5"></label>
+            <label>Down <input type="range" id="s-y" min="0" max="100" step="0.5"></label>
+            <label>Width <input type="range" id="s-w" min="2" max="80" step="0.5"></label>
+            <label>Height <input type="range" id="s-h" min="2" max="80" step="0.5"></label>
+            <button type="button" class="link" id="remove-mark">Remove this mark</button>
+          </div>
+          <p id="mark-live" class="mark-live" aria-live="polite">No wheels marked yet.</p>
+          <button type="button" class="link-btn" id="confirm-marks" disabled>I've marked all my wheels</button>
+        </div>
+      </div>
+    </section>
   </div>
 
   <div class="step">
     <h2><span class="num">2</span> Choose a garment</h2>
+    <div class="tone" id="tone" aria-live="polite"></div>
     <fieldset class="rail garments" id="garment-rail">
       <legend class="sr">Garments</legend>
     </fieldset>
@@ -61,7 +94,8 @@
     <h2>What this can't tell you</h2>
     <ul>
       <li>It shows how a garment looks in a generated image, not how it truly fits. It does not simulate fabric or measure a body.</li>
-      <li>The wheel and chair checks only run on our sample photos, where the wheels are marked by hand. On your own photo, they show as not measured, so please look at your wheels yourself.</li>
+      <li>On your own photo, the wheel and chair checks use the wheels you mark. A mark in the wrong place gives a wrong answer. We don't check hands or footplates on an upload, so look at those yourself.</li>
+      <li>The garment order is a simple colour contrast calculation, not a style judgement. It says how far apart two colours are, not what suits anyone.</li>
       <li>The sample people are synthetic, and it has not been tested with wheelchair users yet.</li>
       <li>YouCam's documentation asks for standing photos. SeatedFit relies on seated use it does not list as supported, which is why every picture is checked.</li>
     </ul>
@@ -88,11 +122,13 @@
     <p class="lede">The try-on is made by YouCam AI Clothes. Its documentation says the photo should be standing, with no sitting or crouching. So when it does work on a seated photo, nobody has promised it will keep the chair intact. SeatedFit checks with plain image measurement, not another AI model.</p>
   </div>
   <ol class="how">
-    <li><h2>Wheel clearance</h2><p>Compares your photo with the result and finds the garment's new pixels. Reports how much of the worst-covered wheel they hide.</p></li>
+    <li><h2>Wheel clearance</h2><p>Compares your photo with the result and finds the garment's new pixels. Reports how much of the worst-covered wheel they hide. On your own photo, it uses the wheels you mark. A mark on nothing wheel-like can't earn a pass.</p></li>
     <li><h2>Wheelchair intact</h2><p>Compares wheels, casters and footplates with your photo. If they change to anything but the garment, or a wheel's outline vanishes, the render is refused.</p></li>
     <li><h2>Face and hands</h2><p>Your face and hands should stay yours. They are compared with the photo.</p></li>
     <li><h2>Garment applied</h2><p>Confirms the picture really changed, so an unchanged photo can't pass as a try-on.</p></li>
   </ol>
+  <h2 class="how-more">Colour contrast</h2>
+  <p class="how-para">YouCam's AI Face Skin Tone Analysis measures a skin colour from the face region. SeatedFit compares it with each garment's main colour using CIEDE2000 colour difference and sorts the garments by that number. It's a simple contrast calculation, not a style judgement, and it never changes a check result.</p>
   <p class="note">3.6 million people aged 15 and over in the US use a wheelchair or scooter (2010 Survey of Income and Program Participation, in the National Academies' 2017 report <a href="https://www.nationalacademies.org/read/24740/chapter/5">The Promise of Assistive Technology</a>).</p>
 </section>
 </main>

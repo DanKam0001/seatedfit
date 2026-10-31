@@ -37,4 +37,6 @@ def alt_text(garment: str, person: str, report_dict: dict) -> str:
     v = report_dict["verdict"]
     lead = {"pass": "Approved try-on", "warn": "Try-on that needs a closer look", "fail": "Refused render, shown in grey as evidence"}[v]
     found = " ".join(c["message"] for c in report_dict["checks"] if c["status"] != "pass")
-    return f"{lead}: {garment} on {person}. {found or 'All four checks passed: it clears the wheels and the chair, face and hands match the photo.'}"
+    person_msg = next((c["message"] for c in report_dict["checks"] if c["id"] == "person"), "")
+    who = "the face matches" if "Hands were not" in person_msg else "face and hands match"
+    return f"{lead}: {garment} on {person}. {found or f'All four checks passed: it clears the wheels and the chair, {who} the photo.'}"

@@ -8,8 +8,9 @@ from fastapi.testclient import TestClient
 from PIL import Image
 
 from seatedfit import app as server
-from seatedfit.catalogue import model_path
-from seatedfit.youcam import SpendStop, TryOn
+from seatedfit import regions, tone
+from seatedfit.catalogue import GARMENTS, MODELS, model_path
+from seatedfit.youcam import SpendStop, TryOn, YouCamError
 
 api = TestClient(server.app)
 
@@ -127,3 +128,129 @@ def test_upload_never_written_to_disk(monkeypatch, tmp_path):
 def test_key_never_reaches_a_response(monkeypatch):
     monkeypatch.setenv("YOURCAM_API_KEY", "sk-canary")
     assert "sk-canary" not in json.dumps(api.get("/api/catalogue").json())
+
+
+# Read off the sample by eye, in the page's own units. regions.json plays no part.
+WHEELS = [{"kind": "wheel", "x": .352, "y": .732, "w": .045, "h": .28}, {"kind": "wheel", "x": .645, "y": .73, "w": .045, "h": .28}]
+
+
+def saved_check(garment, wheels=WHEELS):
+    data = {"garment": garment, "sample": "m2_studio"}
+    if wheels:
+        data["wheels"] = json.dumps(wheels)
+    return api.post("/api/tryon", data=data)
+
+
+@pytest.fixture
+def no_marks_file(monkeypatch, tmp_path):
+    monkeypatch.setattr(regions, "MARKS", tmp_path / "gone.json")
+
+
+def test_marked_wheels_give_real_verdicts_with_no_hand_marks_and_no_key(monkeypatch, no_marks_file):
+    monkeypatch.delenv("YOURCAM_API_KEY", raising=False)
+    long = saved_check("g1_long_wool_coat").json()
+    short = saved_check("g4_crop_jacket").json()
+    assert long["verdict"] == "fail" and "render" not in long and long["saved"] is True
+    assert short["verdict"] == "pass" and "render" in short
+    assert {c["status"] for c in short["checks"]} == {"pass"}
+    assert "Hands were not compared" in next(c for c in short["checks"] if c["id"] == "person")["message"]
+
+
+def test_no_marks_stays_not_measured():
+    r = saved_check("g4_crop_jacket", None).json()
+    assert r["verdict"] == "warn"
+    assert {c["id"]: c["status"] for c in r["checks"]}["clearance"] == "not_measured"
+
+
+def test_marks_on_a_bare_wall_cannot_pass():
+    wall = [{"kind": "wheel", "x": .12, "y": .25, "w": .045, "h": .28}]
+    r = saved_check("g4_crop_jacket", wall).json()
+    clr = next(c for c in r["checks"] if c["id"] == "clearance")
+    assert r["verdict"] == "warn" and clr["status"] == "warn" and "Check your marks" in clr["message"]
+
+
+@pytest.mark.parametrize("bad", [
+    "not json", "[]", "[1]", json.dumps([{"kind": "caster", "x": .5, "y": .5, "w": .1, "h": .1}]),
+    json.dumps([{"kind": "wheel", "x": 2, "y": .5, "w": .1, "h": .1}]),
+    json.dumps([{"kind": "wheel", "x": .5, "y": .5, "w": .001, "h": .1}]),
+    json.dumps([{"kind": "hat", "x": .5, "y": .5, "w": .1, "h": .1}, WHEELS[0]]),
+    json.dumps(WHEELS * 4),
+])
+def test_bad_marks_refused(bad):
+    assert api.post("/api/tryon", data={"garment": "g4_crop_jacket", "sample": "m2_studio", "wheels": bad}).status_code == 422
+
+
+def test_saved_path_spends_nothing(monkeypatch):
+    def boom():
+        raise AssertionError("the saved path must not make a client")
+    monkeypatch.setattr(server, "live_client", boom)
+    assert saved_check("g4_crop_jacket").json()["mode"] == "live"
+
+
+def test_rotated_upload_is_checked_upright():
+    buf = io.BytesIO()
+    exif = Image.Exif()
+    exif[0x0112] = 6  # rotate 90 degrees to show
+    Image.new("RGB", (40, 20)).save(buf, "JPEG", exif=exif)
+    assert server._decode(buf.getvalue()).shape[:2] == (40, 20)
+
+
+def test_tone_saved_for_every_sample_with_no_key(monkeypatch):
+    monkeypatch.delenv("YOURCAM_API_KEY", raising=False)
+    for m in MODELS:
+        j = api.get(f"/api/tone/{m}").json()
+        assert j["skin"].startswith("#") and len(j["garments"]) == len(GARMENTS)
+        got = [g["contrast"] for g in j["garments"]]
+        assert got == sorted(got, reverse=True)
+    assert api.get("/api/tone/m2_studio").json()["source"] == "youcam"
+    assert api.get("/api/tone/m1_studio").json()["source"] == "local"
+    assert api.get("/api/tone/nope").status_code == 404
+
+
+def test_contrast_is_plain_colour_distance():
+    r = {x["garment"]: x["contrast"] for x in tone.rank("#ededee")}
+    assert r["g5_shirt"] < 1 and r["g4_crop_jacket"] > 50
+
+
+class ToneClient:
+    calls = 0
+    sent = b""
+
+    def skin_tone(self, jpeg, ctx):
+        ToneClient.calls += 1
+        ToneClient.sent = jpeg
+        return {"skin_color": "#74523c"}
+
+
+def post_tone():
+    return api.post("/api/tone", files={"photo": ("a.jpg", jpeg(model_path("m2_studio")), "image/jpeg")}).json()
+
+
+def test_tone_upload_has_its_own_cap_and_sends_only_the_face(monkeypatch):
+    ToneClient.calls = 0
+    monkeypatch.setenv("LIVE_TONE_DAILY_CAP", "1")
+    monkeypatch.setattr(server, "live_client", ToneClient)
+    assert post_tone()["source"] == "youcam"
+    side = Image.open(io.BytesIO(ToneClient.sent)).size
+    assert side == (640, 640) and ToneClient.calls == 1
+    assert post_tone()["source"] == "local" and ToneClient.calls == 1
+    assert server._used_today() == 0  # a tone reading doesn't eat a try-on slot
+
+
+def test_tone_failure_falls_back_to_local(monkeypatch):
+    class Bad(ToneClient):
+        def skin_tone(self, jpeg, ctx):
+            raise YouCamError("error_face_position_invalid")
+    monkeypatch.setattr(server, "live_client", Bad)
+    r = post_tone()
+    assert r["source"] == "local" and r["error"] == "error_face_position_invalid"
+
+
+def test_tone_with_no_face_is_refused():
+    blank = np.full((900, 900, 3), 200, np.uint8)
+    assert api.post("/api/tone", files={"photo": ("a.jpg", jpeg(rgb=blank), "image/jpeg")}).status_code == 422
+
+
+def test_page_says_contrast_is_not_style():
+    assert "not a style judgement" in api.get("/").text
+    assert "not a style judgement" in api.get("/static/app.js").text

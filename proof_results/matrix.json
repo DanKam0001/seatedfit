@@ -16,7 +16,8 @@
   "hand_ssim_fail": 0.55,
   "hand_min_bare": 0.3,
   "change_pass": 0.01,
-  "change_fail": 0.003
+  "change_fail": 0.003,
+  "mark_support": 0.4
  },
  "models": 6,
  "garments": 8,
@@ -62,7 +63,8 @@
         "share": 0.0
        }
       ],
-      "all_wheels_share": 0.0786
+      "all_wheels_share": 0.0786,
+      "marks_off_an_outline": 0
      }
     },
     {
@@ -140,7 +142,8 @@
         "share": 0.0215
        }
       ],
-      "all_wheels_share": 0.1469
+      "all_wheels_share": 0.1469,
+      "marks_off_an_outline": 0
      }
     },
     {
@@ -218,7 +221,8 @@
         "share": 0.0
        }
       ],
-      "all_wheels_share": 0.0141
+      "all_wheels_share": 0.0141,
+      "marks_off_an_outline": 0
      }
     },
     {
@@ -296,7 +300,8 @@
         "share": 0.0
        }
       ],
-      "all_wheels_share": 0.0107
+      "all_wheels_share": 0.0107,
+      "marks_off_an_outline": 0
      }
     },
     {
@@ -374,7 +379,8 @@
         "share": 0.0
        }
       ],
-      "all_wheels_share": 0.0064
+      "all_wheels_share": 0.0064,
+      "marks_off_an_outline": 0
      }
     },
     {
@@ -452,7 +458,8 @@
         "share": 0.0
        }
       ],
-      "all_wheels_share": 0.0064
+      "all_wheels_share": 0.0064,
+      "marks_off_an_outline": 0
      }
     },
     {
@@ -530,7 +537,8 @@
         "share": 0.0
        }
       ],
-      "all_wheels_share": 0.0109
+      "all_wheels_share": 0.0109,
+      "marks_off_an_outline": 0
      }
     },
     {
@@ -608,7 +616,8 @@
         "share": 0.0
        }
       ],
-      "all_wheels_share": 0.0205
+      "all_wheels_share": 0.0205,
+      "marks_off_an_outline": 0
      }
     },
     {
@@ -686,7 +695,8 @@
         "share": 0.0
        }
       ],
-      "all_wheels_share": 0.4686
+      "all_wheels_share": 0.4686,
+      "marks_off_an_outline": 0
      }
     },
     {
@@ -764,7 +774,8 @@
         "share": 0.4323
        }
       ],
-      "all_wheels_share": 0.3543
+      "all_wheels_share": 0.3543,
+      "marks_off_an_outline": 0
      }
     },
     {
@@ -842,7 +853,8 @@
         "share": 0.0
        }
       ],
-      "all_wheels_share": 0.1588
+      "all_wheels_share": 0.1588,
+      "marks_off_an_outline": 0
      }
     },
     {
@@ -920,7 +932,8 @@
         "share": 0.0
        }
       ],
-      "all_wheels_share": 0.0
+      "all_wheels_share": 0.0,
+      "marks_off_an_outline": 0
      }
     },
     {
@@ -998,7 +1011,8 @@
         "share": 0.0
        }
       ],
-      "all_wheels_share": 0.0
+      "all_wheels_share": 0.0,
+      "marks_off_an_outline": 0
      }
     },
     {
@@ -1076,7 +1090,8 @@
         "share": 0.0
        }
       ],
-      "all_wheels_share": 0.0
+      "all_wheels_share": 0.0,
+      "marks_off_an_outline": 0
      }
     },
     {
@@ -1154,7 +1169,8 @@
         "share": 0.0
        }
       ],
-      "all_wheels_share": 0.0
+      "all_wheels_share": 0.0,
+      "marks_off_an_outline": 0
      }
     },
     {
@@ -1232,7 +1248,8 @@
         "share": 0.0
        }
       ],
-      "all_wheels_share": 0.0338
+      "all_wheels_share": 0.0338,
+      "marks_off_an_outline": 0
      }
     },
     {
@@ -1310,7 +1327,8 @@
         "share": 0.0132
        }
       ],
-      "all_wheels_share": 0.1745
+      "all_wheels_share": 0.1745,
+      "marks_off_an_outline": 0
      }
     },
     {
@@ -1388,7 +1406,8 @@
         "share": 0.6409
        }
       ],
-      "all_wheels_share": 0.424
+      "all_wheels_share": 0.424,
+      "marks_off_an_outline": 0
      }
     },
     {
@@ -1466,7 +1485,8 @@
         "share": 0.0
        }
       ],
-      "all_wheels_share": 0.1379
+      "all_wheels_share": 0.1379,
+      "marks_off_an_outline": 0
      }
     },
     {
@@ -1544,7 +1564,8 @@
         "share": 0.0
        }
       ],
-      "all_wheels_share": 0.0
+      "all_wheels_share": 0.0,
+      "marks_off_an_outline": 0
      }
     },
     {
@@ -1622,7 +1643,8 @@
         "share": 0.0
        }
       ],
-      "all_wheels_share": 0.0
+      "all_wheels_share": 0.0,
+      "marks_off_an_outline": 0
      }
     },
     {
@@ -1700,7 +1722,8 @@
         "share": 0.0
        }
       ],
-      "all_wheels_share": 0.0
+      "all_wheels_share": 0.0,
+      "marks_off_an_outline": 0
      }
     },
     {
@@ -1778,7 +1801,8 @@
         "share": 0.0
        }
       ],
-      "all_wheels_share": 0.0
+      "all_wheels_share": 0.0,
+      "marks_off_an_outline": 0
      }
     },
     {
@@ -1856,7 +1880,8 @@
         "share": 0.0
        }
       ],
-      "all_wheels_share": 0.0334
+      "all_wheels_share": 0.0334,
+      "marks_off_an_outline": 0
      }
     },
     {
@@ -1934,7 +1959,8 @@
         "share": 0.0
        }
       ],
-      "all_wheels_share": 0.1495
+      "all_wheels_share": 0.1495,
+      "marks_off_an_outline": 0
      }
     },
     {
@@ -2012,7 +2038,8 @@
         "share": 0.0
        }
       ],
-      "all_wheels_share": 0.3057
+      "all_wheels_share": 0.3057,
+      "marks_off_an_outline": 0
      }
     },
     {
@@ -2090,7 +2117,8 @@
         "share": 0.0
        }
       ],
-      "all_wheels_share": 0.0445
+      "all_wheels_share": 0.0445,
+      "marks_off_an_outline": 0
      }
     },
     {
@@ -2168,7 +2196,8 @@
         "share": 0.0
        }
       ],
-      "all_wheels_share": 0.035
+      "all_wheels_share": 0.035,
+      "marks_off_an_outline": 0
      }
     },
     {
@@ -2246,7 +2275,8 @@
         "share": 0.0
        }
       ],
-      "all_wheels_share": 0.0207
+      "all_wheels_share": 0.0207,
+      "marks_off_an_outline": 0
      }
     },
     {
@@ -2324,7 +2354,8 @@
         "share": 0.0
        }
       ],
-      "all_wheels_share": 0.0187
+      "all_wheels_share": 0.0187,
+      "marks_off_an_outline": 0
      }
     },
     {
@@ -2402,7 +2433,8 @@
         "share": 0.0
        }
       ],
-      "all_wheels_share": 0.0252
+      "all_wheels_share": 0.0252,
+      "marks_off_an_outline": 0
      }
     },
     {
@@ -2480,7 +2512,8 @@
         "share": 0.0
        }
       ],
-      "all_wheels_share": 0.1818
+      "all_wheels_share": 0.1818,
+      "marks_off_an_outline": 0
      }
     },
     {
@@ -2558,7 +2591,8 @@
         "share": 0.0
        }
       ],
-      "all_wheels_share": 0.0
+      "all_wheels_share": 0.0,
+      "marks_off_an_outline": 0
      }
     },
     {
@@ -2636,7 +2670,8 @@
         "share": 0.3042
        }
       ],
-      "all_wheels_share": 0.2077
+      "all_wheels_share": 0.2077,
+      "marks_off_an_outline": 0
      }
     },
     {
@@ -2714,7 +2749,8 @@
         "share": 0.0
        }
       ],
-      "all_wheels_share": 0.0
+      "all_wheels_share": 0.0,
+      "marks_off_an_outline": 0
      }
     },
     {
@@ -2792,7 +2828,8 @@
         "share": 0.0
        }
       ],
-      "all_wheels_share": 0.0
+      "all_wheels_share": 0.0,
+      "marks_off_an_outline": 0
      }
     },
     {
@@ -2870,7 +2907,8 @@
         "share": 0.0
        }
       ],
-      "all_wheels_share": 0.0
+      "all_wheels_share": 0.0,
+      "marks_off_an_outline": 0
      }
     },
     {
@@ -2948,7 +2986,8 @@
         "share": 0.0
        }
       ],
-      "all_wheels_share": 0.0
+      "all_wheels_share": 0.0,
+      "marks_off_an_outline": 0
      }
     },
     {
@@ -3026,7 +3065,8 @@
         "share": 0.0
        }
       ],
-      "all_wheels_share": 0.0
+      "all_wheels_share": 0.0,
+      "marks_off_an_outline": 0
      }
     },
     {
@@ -3104,7 +3144,8 @@
         "share": 0.0
        }
       ],
-      "all_wheels_share": 0.0
+      "all_wheels_share": 0.0,
+      "marks_off_an_outline": 0
      }
     },
     {
@@ -3178,7 +3219,8 @@
         "share": 0.0
        }
       ],
-      "all_wheels_share": 0.0
+      "all_wheels_share": 0.0,
+      "marks_off_an_outline": 0
      }
     },
     {
@@ -3252,7 +3294,8 @@
         "share": 0.5022
        }
       ],
-      "all_wheels_share": 0.0416
+      "all_wheels_share": 0.0416,
+      "marks_off_an_outline": 0
      }
     },
     {
@@ -3326,7 +3369,8 @@
         "share": 0.0
        }
       ],
-      "all_wheels_share": 0.0
+      "all_wheels_share": 0.0,
+      "marks_off_an_outline": 0
      }
     },
     {
@@ -3400,7 +3444,8 @@
         "share": 0.0
        }
       ],
-      "all_wheels_share": 0.0
+      "all_wheels_share": 0.0,
+      "marks_off_an_outline": 0
      }
     },
     {
@@ -3474,7 +3519,8 @@
         "share": 0.0
        }
       ],
-      "all_wheels_share": 0.0
+      "all_wheels_share": 0.0,
+      "marks_off_an_outline": 0
      }
     },
     {
@@ -3548,7 +3594,8 @@
         "share": 0.0
        }
       ],
-      "all_wheels_share": 0.0
+      "all_wheels_share": 0.0,
+      "marks_off_an_outline": 0
      }
     },
     {
@@ -3622,7 +3669,8 @@
         "share": 0.0
        }
       ],
-      "all_wheels_share": 0.0
+      "all_wheels_share": 0.0,
+      "marks_off_an_outline": 0
      }
     },
     {
@@ -3696,7 +3744,8 @@
         "share": 0.0
        }
       ],
-      "all_wheels_share": 0.0285
+      "all_wheels_share": 0.0285,
+      "marks_off_an_outline": 0
      }
     },
     {

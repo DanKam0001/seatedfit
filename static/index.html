@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SeatedFit: try-on for people who sit</title>
+<meta name="description" content="See clothes on a seated photo, and know whether the picture can be trusted.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:opsz,wght@9..144,400;9..144,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <a class="brand" href="#shop">SeatedFit</a>
+  <nav aria-label="Views">
+    <a href="#shop" data-view="shop">For shoppers</a>
+    <a href="#retail" data-view="retail">For retailers</a>
+    <a href="#how" data-view="how">How it works</a>
+  </nav>
+</header>
+
+<main id="main" tabindex="-1">
+
+<section id="view-shop" class="view">
+  <div class="intro">
+    <h1>Clothes, seen sitting down.</h1>
+    <p class="lede">Product photos show a garment on someone standing. SeatedFit puts it on a seated photo, then checks the picture before you trust it: is the wheelchair still whole, and does the hem reach the wheels?</p>
+  </div>
+
+  <div class="step">
+    <h2><span class="num">1</span> Choose a seated photo</h2>
+    <fieldset class="rail models" id="model-rail">
+      <legend class="sr">Sample models</legend>
+    </fieldset>
+    <p class="note">Sample people are AI-generated, not real. No real person's photo is used.</p>
+    <div class="upload">
+      <label for="photo">Or use your own photo <span class="hint">JPG or PNG, up to 10 MB. Deleted when you leave, never stored.</span></label>
+      <input id="photo" type="file" accept="image/jpeg,image/png">
+      <button type="button" id="clear-photo" class="link" hidden>Remove my photo</button>
+    </div>
+    <div id="photo-report" aria-live="polite"></div>
+  </div>
+
+  <div class="step">
+    <h2><span class="num">2</span> Choose a garment</h2>
+    <fieldset class="rail garments" id="garment-rail">
+      <legend class="sr">Garments</legend>
+    </fieldset>
+    <p class="note">Garment images are AI-generated. No real brand's product is shown.</p>
+    <button type="button" id="run-live" class="primary" hidden>Try it on my photo</button>
+  </div>
+
+  <div class="step" id="result-step">
+    <h2><span class="num">3</span> See it seated, with the check</h2>
+    <div id="result" aria-live="polite"></div>
+  </div>
+
+  <aside class="limits">
+    <h2>What this can't tell you</h2>
+    <ul>
+      <li>It shows how a garment looks in a generated image, not how it truly fits. It does not simulate fabric or measure a body.</li>
+      <li>The sample people are synthetic, and it has not been tested with wheelchair users yet.</li>
+      <li>YouCam's documentation asks for standing photos. SeatedFit relies on seated use it does not list as supported, which is why every picture is checked.</li>
+    </ul>
+  </aside>
+</section>
+
+<section id="view-retail" class="view" hidden>
+  <div class="intro">
+    <h1>A seated catalogue, with a gatekeeper.</h1>
+    <p class="lede">Every garment on a panel of seated models. Only pictures that pass all four checks reach the gallery. The rest go to a person, with the reason.</p>
+  </div>
+  <dl class="counts" id="counts"></dl>
+  <p class="actions"><a id="gallery" class="primary" href="/api/gallery.zip" download>Download the approved gallery</a></p>
+  <h2>Garment by model</h2>
+  <p class="note">From the saved run. Select a picture for its full check. Models and garments are AI-generated.</p>
+  <div class="table-wrap" tabindex="0" role="region" aria-label="Results by garment and model"><table id="matrix"></table></div>
+  <h2>For human review</h2>
+  <ul class="review" id="review"></ul>
+</section>
+
+<section id="view-how" class="view" hidden>
+  <div class="intro">
+    <h1>Why a try-on needs a check.</h1>
+    <p class="lede">The try-on is made by YouCam AI Clothes. Its documentation says the photo should be standing, with no sitting or crouching. So when it does work on a seated photo, nobody has promised it will keep the chair intact. SeatedFit checks with plain image measurement, not another AI model.</p>
+  </div>
+  <ol class="how">
+    <li><h2>Wheel clearance</h2><p>Compares your photo with the result and finds the garment's new pixels. Reports how much of the worst-covered wheel they hide.</p></li>
+    <li><h2>Wheelchair intact</h2><p>Compares wheels, casters and footplates with your photo. If they change to anything but the garment, or a wheel's outline vanishes, the render is refused.</p></li>
+    <li><h2>Face and hands</h2><p>Your face and hands should stay yours. They are compared with the photo.</p></li>
+    <li><h2>Garment applied</h2><p>Confirms the picture really changed, so an unchanged photo can't pass as a try-on.</p></li>
+  </ol>
+  <p class="note">3.6 million people aged 15 and over in the US use a wheelchair or scooter (2010 Survey of Income and Program Participation, in the National Academies' 2017 report <a href="https://www.nationalacademies.org/read/24740/chapter/5">The Promise of Assistive Technology</a>).</p>
+</section>
+</main>
+
+<dialog id="detail" aria-labelledby="detail-title">
+  <div id="detail-body"></div>
+  <form method="dialog"><button class="primary">Close</button></form>
+</dialog>
+
+<footer class="foot"><p>Try-on by YouCam AI Clothes. Sample people and garments are AI-generated. An independent project.</p></footer>
+<script src="/static/app.js"></script>
+</body>
+</html>

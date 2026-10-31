@@ -1,0 +1,3744 @@
+{
+ "thresholds": {
+  "change_delta_e": 14.0,
+  "garment_match_delta_e": 20.0,
+  "skin_ab": 14.0,
+  "chair_ssim_pass": 0.8,
+  "chair_ssim_fail": 0.65,
+  "damage_pass": 0.04,
+  "damage_fail": 0.12,
+  "edges_kept_fail": 0.55,
+  "clearance_pass": 0.05,
+  "clearance_fail": 0.15,
+  "face_ssim_pass": 0.8,
+  "face_ssim_fail": 0.6,
+  "hand_ssim_pass": 0.65,
+  "hand_ssim_fail": 0.4,
+  "hand_min_bare": 0.3,
+  "change_pass": 0.01,
+  "change_fail": 0.003
+ },
+ "models": 6,
+ "garments": 8,
+ "cells_total": 48,
+ "counts": {
+  "pass": 32,
+  "warn": 3,
+  "fail": 13,
+  "no_render": 0
+ },
+ "cells": [
+  {
+   "model": "m1_studio",
+   "garment": "g1_long_wool_coat",
+   "category": "full_body",
+   "source_sha": "88081eb094bbe173",
+   "garment_sha": "44527caf078f2a44",
+   "verdict": "fail",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "fail",
+     "value": 0.1549,
+     "unit": "share of worst wheel",
+     "message": "The garment covers 15% of a wheel. It could catch while you push.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.0899
+       },
+       {
+        "kind": "wheel",
+        "share": 0.1549
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       }
+      ],
+      "all_wheels_share": 0.0786
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "pass",
+     "value": 0.951,
+     "unit": "similarity",
+     "message": "The wheelchair matches your photo.",
+     "detail": {
+      "changed_share": 0.0082,
+      "worst_wheel_edges_kept": 0.937,
+      "wheels_compared": 4
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "pass",
+     "value": 0.959,
+     "unit": "similarity",
+     "message": "The face and hands match your photo.",
+     "detail": {
+      "face": 0.959,
+      "worst_hand": 0.861
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.1671,
+     "unit": "share of picture",
+     "message": "The garment changed 17% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m1_studio__g1_long_wool_coat__full_body.jpg",
+   "render_sha": "305b5c96370be5d8",
+   "overlay": "overlays/m1_studio__g1_long_wool_coat.jpg",
+   "web": "m1_studio__g1_long_wool_coat.jpg",
+   "alt": "Refused render, shown in grey as evidence: Long wool coat on Woman with long dark hair in a white T-shirt and black leggings, manual wheelchair, pale studio. The garment covers 15% of a wheel. It could catch while you push."
+  },
+  {
+   "model": "m1_studio",
+   "garment": "g2_maxi_dress",
+   "category": "full_body",
+   "source_sha": "88081eb094bbe173",
+   "garment_sha": "0184b4331c38ca39",
+   "verdict": "fail",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "fail",
+     "value": 0.2871,
+     "unit": "share of worst wheel",
+     "message": "The garment covers 29% of a wheel. It could catch while you push.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.1555
+       },
+       {
+        "kind": "wheel",
+        "share": 0.2871
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0215
+       }
+      ],
+      "all_wheels_share": 0.1469
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "pass",
+     "value": 0.943,
+     "unit": "similarity",
+     "message": "The wheelchair matches your photo.",
+     "detail": {
+      "changed_share": 0.0004,
+      "worst_wheel_edges_kept": 0.945,
+      "wheels_compared": 4
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "pass",
+     "value": 0.97,
+     "unit": "similarity",
+     "message": "The face and hands match your photo.",
+     "detail": {
+      "face": 0.97,
+      "worst_hand": 0.97
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.1525,
+     "unit": "share of picture",
+     "message": "The garment changed 15% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m1_studio__g2_maxi_dress__full_body.jpg",
+   "render_sha": "26b3c9bc8a21d383",
+   "overlay": "overlays/m1_studio__g2_maxi_dress.jpg",
+   "web": "m1_studio__g2_maxi_dress.jpg",
+   "alt": "Refused render, shown in grey as evidence: Maxi dress on Woman with long dark hair in a white T-shirt and black leggings, manual wheelchair, pale studio. The garment covers 29% of a wheel. It could catch while you push."
+  },
+  {
+   "model": "m1_studio",
+   "garment": "g3_trench",
+   "category": "full_body",
+   "source_sha": "88081eb094bbe173",
+   "garment_sha": "b593e9f85400205a",
+   "verdict": "pass",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "pass",
+     "value": 0.0249,
+     "unit": "share of worst wheel",
+     "message": "The garment stays clear of the wheels.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.0249
+       },
+       {
+        "kind": "wheel",
+        "share": 0.021
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       }
+      ],
+      "all_wheels_share": 0.0141
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "pass",
+     "value": 0.956,
+     "unit": "similarity",
+     "message": "The wheelchair matches your photo.",
+     "detail": {
+      "changed_share": 0.0002,
+      "worst_wheel_edges_kept": 0.956,
+      "wheels_compared": 4
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "pass",
+     "value": 0.968,
+     "unit": "similarity",
+     "message": "The face and hands match your photo.",
+     "detail": {
+      "face": 0.968,
+      "worst_hand": 0.666
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.1257,
+     "unit": "share of picture",
+     "message": "The garment changed 13% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m1_studio__g3_trench__full_body.jpg",
+   "render_sha": "f3e01f8b49bbb27e",
+   "overlay": "overlays/m1_studio__g3_trench.jpg",
+   "web": "m1_studio__g3_trench.jpg",
+   "alt": "Approved try-on: Trench coat on Woman with long dark hair in a white T-shirt and black leggings, manual wheelchair, pale studio. All four checks passed: it clears the wheels and the chair, face and hands match the photo."
+  },
+  {
+   "model": "m1_studio",
+   "garment": "g4_crop_jacket",
+   "category": "upper_body",
+   "source_sha": "88081eb094bbe173",
+   "garment_sha": "4c71d1c522204af2",
+   "verdict": "pass",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "pass",
+     "value": 0.0219,
+     "unit": "share of worst wheel",
+     "message": "The garment stays clear of the wheels.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.0219
+       },
+       {
+        "kind": "wheel",
+        "share": 0.0136
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       }
+      ],
+      "all_wheels_share": 0.0107
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "pass",
+     "value": 0.961,
+     "unit": "similarity",
+     "message": "The wheelchair matches your photo.",
+     "detail": {
+      "changed_share": 0.0,
+      "worst_wheel_edges_kept": 0.956,
+      "wheels_compared": 4
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "pass",
+     "value": 0.958,
+     "unit": "similarity",
+     "message": "The face and hands match your photo.",
+     "detail": {
+      "face": 0.958,
+      "worst_hand": 0.819
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.0842,
+     "unit": "share of picture",
+     "message": "The garment changed 8% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m1_studio__g4_crop_jacket__upper_body.jpg",
+   "render_sha": "b8358ac115e7a19b",
+   "overlay": "overlays/m1_studio__g4_crop_jacket.jpg",
+   "web": "m1_studio__g4_crop_jacket.jpg",
+   "alt": "Approved try-on: Cropped jacket on Woman with long dark hair in a white T-shirt and black leggings, manual wheelchair, pale studio. All four checks passed: it clears the wheels and the chair, face and hands match the photo."
+  },
+  {
+   "model": "m1_studio",
+   "garment": "g5_shirt",
+   "category": "upper_body",
+   "source_sha": "88081eb094bbe173",
+   "garment_sha": "8f0fd9e40763597b",
+   "verdict": "pass",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "pass",
+     "value": 0.0188,
+     "unit": "share of worst wheel",
+     "message": "The garment stays clear of the wheels.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.0188
+       },
+       {
+        "kind": "wheel",
+        "share": 0.0038
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       }
+      ],
+      "all_wheels_share": 0.0064
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "pass",
+     "value": 0.963,
+     "unit": "similarity",
+     "message": "The wheelchair matches your photo.",
+     "detail": {
+      "changed_share": 0.0,
+      "worst_wheel_edges_kept": 0.946,
+      "wheels_compared": 4
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "pass",
+     "value": 0.972,
+     "unit": "similarity",
+     "message": "The face and hands match your photo.",
+     "detail": {
+      "face": 0.972,
+      "worst_hand": 0.869
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.0288,
+     "unit": "share of picture",
+     "message": "The garment changed 3% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m1_studio__g5_shirt__upper_body.jpg",
+   "render_sha": "bdd43d601e737f76",
+   "overlay": "overlays/m1_studio__g5_shirt.jpg",
+   "web": "m1_studio__g5_shirt.jpg",
+   "alt": "Approved try-on: Shirt on Woman with long dark hair in a white T-shirt and black leggings, manual wheelchair, pale studio. All four checks passed: it clears the wheels and the chair, face and hands match the photo."
+  },
+  {
+   "model": "m1_studio",
+   "garment": "g6_knit",
+   "category": "upper_body",
+   "source_sha": "88081eb094bbe173",
+   "garment_sha": "aa1a7013929fe084",
+   "verdict": "pass",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "pass",
+     "value": 0.0169,
+     "unit": "share of worst wheel",
+     "message": "The garment stays clear of the wheels.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.0169
+       },
+       {
+        "kind": "wheel",
+        "share": 0.0053
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       }
+      ],
+      "all_wheels_share": 0.0064
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "pass",
+     "value": 0.962,
+     "unit": "similarity",
+     "message": "The wheelchair matches your photo.",
+     "detail": {
+      "changed_share": 0.0003,
+      "worst_wheel_edges_kept": 0.985,
+      "wheels_compared": 4
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "pass",
+     "value": 0.972,
+     "unit": "similarity",
+     "message": "The face and hands match your photo.",
+     "detail": {
+      "face": 0.972,
+      "worst_hand": 0.84
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.0934,
+     "unit": "share of picture",
+     "message": "The garment changed 9% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m1_studio__g6_knit__upper_body.jpg",
+   "render_sha": "b2f617fa8f4ffcf1",
+   "overlay": "overlays/m1_studio__g6_knit.jpg",
+   "web": "m1_studio__g6_knit.jpg",
+   "alt": "Approved try-on: Knit jumper on Woman with long dark hair in a white T-shirt and black leggings, manual wheelchair, pale studio. All four checks passed: it clears the wheels and the chair, face and hands match the photo."
+  },
+  {
+   "model": "m1_studio",
+   "garment": "g7_blazer",
+   "category": "upper_body",
+   "source_sha": "88081eb094bbe173",
+   "garment_sha": "c3edcac66d7876f9",
+   "verdict": "pass",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "pass",
+     "value": 0.022,
+     "unit": "share of worst wheel",
+     "message": "The garment stays clear of the wheels.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.022
+       },
+       {
+        "kind": "wheel",
+        "share": 0.0142
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       }
+      ],
+      "all_wheels_share": 0.0109
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "pass",
+     "value": 0.963,
+     "unit": "similarity",
+     "message": "The wheelchair matches your photo.",
+     "detail": {
+      "changed_share": 0.0,
+      "worst_wheel_edges_kept": 0.961,
+      "wheels_compared": 4
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "pass",
+     "value": 0.965,
+     "unit": "similarity",
+     "message": "The face and hands match your photo.",
+     "detail": {
+      "face": 0.965,
+      "worst_hand": 0.823
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.0805,
+     "unit": "share of picture",
+     "message": "The garment changed 8% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m1_studio__g7_blazer__upper_body.jpg",
+   "render_sha": "a7a0fa50762b04f1",
+   "overlay": "overlays/m1_studio__g7_blazer.jpg",
+   "web": "m1_studio__g7_blazer.jpg",
+   "alt": "Approved try-on: Blazer on Woman with long dark hair in a white T-shirt and black leggings, manual wheelchair, pale studio. All four checks passed: it clears the wheels and the chair, face and hands match the photo."
+  },
+  {
+   "model": "m1_studio",
+   "garment": "g8_puffer_long",
+   "category": "full_body",
+   "source_sha": "88081eb094bbe173",
+   "garment_sha": "165ddef1e7f76d3a",
+   "verdict": "pass",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "pass",
+     "value": 0.0367,
+     "unit": "share of worst wheel",
+     "message": "The garment stays clear of the wheels.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.028
+       },
+       {
+        "kind": "wheel",
+        "share": 0.0367
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       }
+      ],
+      "all_wheels_share": 0.0205
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "pass",
+     "value": 0.957,
+     "unit": "similarity",
+     "message": "The wheelchair matches your photo.",
+     "detail": {
+      "changed_share": 0.0002,
+      "worst_wheel_edges_kept": 0.957,
+      "wheels_compared": 4
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "pass",
+     "value": 0.924,
+     "unit": "similarity",
+     "message": "The face and hands match your photo.",
+     "detail": {
+      "face": 0.924,
+      "worst_hand": 0.85
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.1041,
+     "unit": "share of picture",
+     "message": "The garment changed 10% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m1_studio__g8_puffer_long__full_body.jpg",
+   "render_sha": "7a02df2b4fa625ff",
+   "overlay": "overlays/m1_studio__g8_puffer_long.jpg",
+   "web": "m1_studio__g8_puffer_long.jpg",
+   "alt": "Approved try-on: Long puffer coat on Woman with long dark hair in a white T-shirt and black leggings, manual wheelchair, pale studio. All four checks passed: it clears the wheels and the chair, face and hands match the photo."
+  },
+  {
+   "model": "m2_studio",
+   "garment": "g1_long_wool_coat",
+   "category": "full_body",
+   "source_sha": "1fdbd63929360c23",
+   "garment_sha": "44527caf078f2a44",
+   "verdict": "fail",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "fail",
+     "value": 0.593,
+     "unit": "share of worst wheel",
+     "message": "The garment covers 59% of a wheel. It could catch while you push.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.593
+       },
+       {
+        "kind": "wheel",
+        "share": 0.4554
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       }
+      ],
+      "all_wheels_share": 0.4686
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "pass",
+     "value": 0.892,
+     "unit": "similarity",
+     "message": "The wheelchair matches your photo.",
+     "detail": {
+      "changed_share": 0.031,
+      "worst_wheel_edges_kept": 0.629,
+      "wheels_compared": 4
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "warn",
+     "value": 0.958,
+     "unit": "similarity",
+     "message": "The face or hands look slightly different from your photo.",
+     "detail": {
+      "face": 0.958,
+      "worst_hand": 0.643
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.1526,
+     "unit": "share of picture",
+     "message": "The garment changed 15% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m2_studio__g1_long_wool_coat__full_body.jpg",
+   "render_sha": "327cc0052e2141c6",
+   "overlay": "overlays/m2_studio__g1_long_wool_coat.jpg",
+   "web": "m2_studio__g1_long_wool_coat.jpg",
+   "alt": "Refused render, shown in grey as evidence: Long wool coat on Man in a grey T-shirt and black trousers, sports wheelchair, grey studio. The garment covers 59% of a wheel. It could catch while you push. The face or hands look slightly different from your photo."
+  },
+  {
+   "model": "m2_studio",
+   "garment": "g2_maxi_dress",
+   "category": "full_body",
+   "source_sha": "1fdbd63929360c23",
+   "garment_sha": "0184b4331c38ca39",
+   "verdict": "fail",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "fail",
+     "value": 0.4875,
+     "unit": "share of worst wheel",
+     "message": "The garment covers 49% of a wheel. It could catch while you push.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.2523
+       },
+       {
+        "kind": "wheel",
+        "share": 0.4875
+       },
+       {
+        "kind": "caster",
+        "share": 0.1291
+       },
+       {
+        "kind": "caster",
+        "share": 0.4323
+       }
+      ],
+      "all_wheels_share": 0.3543
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "warn",
+     "value": 0.665,
+     "unit": "similarity",
+     "message": "Parts of the wheelchair look slightly different from your photo.",
+     "detail": {
+      "changed_share": 0.0246,
+      "worst_wheel_edges_kept": 0.891,
+      "wheels_compared": 4
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "pass",
+     "value": 0.959,
+     "unit": "similarity",
+     "message": "The face and hands match your photo.",
+     "detail": {
+      "face": 0.959,
+      "worst_hand": 0.818
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.1684,
+     "unit": "share of picture",
+     "message": "The garment changed 17% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m2_studio__g2_maxi_dress__full_body.jpg",
+   "render_sha": "305c06c1f2941cd7",
+   "overlay": "overlays/m2_studio__g2_maxi_dress.jpg",
+   "web": "m2_studio__g2_maxi_dress.jpg",
+   "alt": "Refused render, shown in grey as evidence: Maxi dress on Man in a grey T-shirt and black trousers, sports wheelchair, grey studio. The garment covers 49% of a wheel. It could catch while you push. Parts of the wheelchair look slightly different from your photo."
+  },
+  {
+   "model": "m2_studio",
+   "garment": "g3_trench",
+   "category": "full_body",
+   "source_sha": "1fdbd63929360c23",
+   "garment_sha": "b593e9f85400205a",
+   "verdict": "fail",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "fail",
+     "value": 0.1914,
+     "unit": "share of worst wheel",
+     "message": "The garment covers 19% of a wheel. It could catch while you push.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.1637
+       },
+       {
+        "kind": "wheel",
+        "share": 0.1914
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       }
+      ],
+      "all_wheels_share": 0.1588
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "pass",
+     "value": 0.952,
+     "unit": "similarity",
+     "message": "The wheelchair matches your photo.",
+     "detail": {
+      "changed_share": 0.0,
+      "worst_wheel_edges_kept": 0.72,
+      "wheels_compared": 4
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "pass",
+     "value": 0.958,
+     "unit": "similarity",
+     "message": "The face and hands match your photo.",
+     "detail": {
+      "face": 0.958,
+      "worst_hand": 0.81
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.1287,
+     "unit": "share of picture",
+     "message": "The garment changed 13% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m2_studio__g3_trench__full_body.jpg",
+   "render_sha": "25ab1191090a7d89",
+   "overlay": "overlays/m2_studio__g3_trench.jpg",
+   "web": "m2_studio__g3_trench.jpg",
+   "alt": "Refused render, shown in grey as evidence: Trench coat on Man in a grey T-shirt and black trousers, sports wheelchair, grey studio. The garment covers 19% of a wheel. It could catch while you push."
+  },
+  {
+   "model": "m2_studio",
+   "garment": "g4_crop_jacket",
+   "category": "upper_body",
+   "source_sha": "1fdbd63929360c23",
+   "garment_sha": "4c71d1c522204af2",
+   "verdict": "pass",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "pass",
+     "value": 0.0,
+     "unit": "share of worst wheel",
+     "message": "The garment stays clear of the wheels.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.0
+       },
+       {
+        "kind": "wheel",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       }
+      ],
+      "all_wheels_share": 0.0
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "pass",
+     "value": 0.963,
+     "unit": "similarity",
+     "message": "The wheelchair matches your photo.",
+     "detail": {
+      "changed_share": 0.0,
+      "worst_wheel_edges_kept": 0.974,
+      "wheels_compared": 4
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "pass",
+     "value": 0.96,
+     "unit": "similarity",
+     "message": "The face and hands match your photo.",
+     "detail": {
+      "face": 0.96,
+      "worst_hand": 0.873
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.0831,
+     "unit": "share of picture",
+     "message": "The garment changed 8% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m2_studio__g4_crop_jacket__upper_body.jpg",
+   "render_sha": "be2f09f6a11b939f",
+   "overlay": "overlays/m2_studio__g4_crop_jacket.jpg",
+   "web": "m2_studio__g4_crop_jacket.jpg",
+   "alt": "Approved try-on: Cropped jacket on Man in a grey T-shirt and black trousers, sports wheelchair, grey studio. All four checks passed: it clears the wheels and the chair, face and hands match the photo."
+  },
+  {
+   "model": "m2_studio",
+   "garment": "g5_shirt",
+   "category": "upper_body",
+   "source_sha": "1fdbd63929360c23",
+   "garment_sha": "8f0fd9e40763597b",
+   "verdict": "pass",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "pass",
+     "value": 0.0,
+     "unit": "share of worst wheel",
+     "message": "The garment stays clear of the wheels.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.0
+       },
+       {
+        "kind": "wheel",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       }
+      ],
+      "all_wheels_share": 0.0
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "pass",
+     "value": 0.959,
+     "unit": "similarity",
+     "message": "The wheelchair matches your photo.",
+     "detail": {
+      "changed_share": 0.0,
+      "worst_wheel_edges_kept": 0.711,
+      "wheels_compared": 4
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "pass",
+     "value": 0.959,
+     "unit": "similarity",
+     "message": "The face and hands match your photo.",
+     "detail": {
+      "face": 0.959,
+      "worst_hand": 0.957
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.0507,
+     "unit": "share of picture",
+     "message": "The garment changed 5% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m2_studio__g5_shirt__upper_body.jpg",
+   "render_sha": "e9dc676199572246",
+   "overlay": "overlays/m2_studio__g5_shirt.jpg",
+   "web": "m2_studio__g5_shirt.jpg",
+   "alt": "Approved try-on: Shirt on Man in a grey T-shirt and black trousers, sports wheelchair, grey studio. All four checks passed: it clears the wheels and the chair, face and hands match the photo."
+  },
+  {
+   "model": "m2_studio",
+   "garment": "g6_knit",
+   "category": "upper_body",
+   "source_sha": "1fdbd63929360c23",
+   "garment_sha": "aa1a7013929fe084",
+   "verdict": "pass",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "pass",
+     "value": 0.0,
+     "unit": "share of worst wheel",
+     "message": "The garment stays clear of the wheels.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.0
+       },
+       {
+        "kind": "wheel",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       }
+      ],
+      "all_wheels_share": 0.0
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "pass",
+     "value": 0.951,
+     "unit": "similarity",
+     "message": "The wheelchair matches your photo.",
+     "detail": {
+      "changed_share": 0.0021,
+      "worst_wheel_edges_kept": 0.728,
+      "wheels_compared": 4
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "pass",
+     "value": 0.961,
+     "unit": "similarity",
+     "message": "The face and hands match your photo.",
+     "detail": {
+      "face": 0.961,
+      "worst_hand": 0.88
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.0879,
+     "unit": "share of picture",
+     "message": "The garment changed 9% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m2_studio__g6_knit__upper_body.jpg",
+   "render_sha": "776862c4fd0cea71",
+   "overlay": "overlays/m2_studio__g6_knit.jpg",
+   "web": "m2_studio__g6_knit.jpg",
+   "alt": "Approved try-on: Knit jumper on Man in a grey T-shirt and black trousers, sports wheelchair, grey studio. All four checks passed: it clears the wheels and the chair, face and hands match the photo."
+  },
+  {
+   "model": "m2_studio",
+   "garment": "g7_blazer",
+   "category": "upper_body",
+   "source_sha": "1fdbd63929360c23",
+   "garment_sha": "c3edcac66d7876f9",
+   "verdict": "pass",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "pass",
+     "value": 0.0,
+     "unit": "share of worst wheel",
+     "message": "The garment stays clear of the wheels.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.0
+       },
+       {
+        "kind": "wheel",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       }
+      ],
+      "all_wheels_share": 0.0
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "pass",
+     "value": 0.962,
+     "unit": "similarity",
+     "message": "The wheelchair matches your photo.",
+     "detail": {
+      "changed_share": 0.0,
+      "worst_wheel_edges_kept": 0.716,
+      "wheels_compared": 4
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "pass",
+     "value": 0.96,
+     "unit": "similarity",
+     "message": "The face and hands match your photo.",
+     "detail": {
+      "face": 0.96,
+      "worst_hand": 0.863
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.0783,
+     "unit": "share of picture",
+     "message": "The garment changed 8% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m2_studio__g7_blazer__upper_body.jpg",
+   "render_sha": "d01c70cc6609f3af",
+   "overlay": "overlays/m2_studio__g7_blazer.jpg",
+   "web": "m2_studio__g7_blazer.jpg",
+   "alt": "Approved try-on: Blazer on Man in a grey T-shirt and black trousers, sports wheelchair, grey studio. All four checks passed: it clears the wheels and the chair, face and hands match the photo."
+  },
+  {
+   "model": "m2_studio",
+   "garment": "g8_puffer_long",
+   "category": "full_body",
+   "source_sha": "1fdbd63929360c23",
+   "garment_sha": "165ddef1e7f76d3a",
+   "verdict": "warn",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "warn",
+     "value": 0.0754,
+     "unit": "share of worst wheel",
+     "message": "The garment touches a wheel, covering 8% of it. Check this before you buy.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.0
+       },
+       {
+        "kind": "wheel",
+        "share": 0.0754
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       }
+      ],
+      "all_wheels_share": 0.0338
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "pass",
+     "value": 0.932,
+     "unit": "similarity",
+     "message": "The wheelchair matches your photo.",
+     "detail": {
+      "changed_share": 0.0005,
+      "worst_wheel_edges_kept": 0.953,
+      "wheels_compared": 4
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "pass",
+     "value": 0.902,
+     "unit": "similarity",
+     "message": "The face and hands match your photo.",
+     "detail": {
+      "face": 0.902,
+      "worst_hand": 0.766
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.1037,
+     "unit": "share of picture",
+     "message": "The garment changed 10% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m2_studio__g8_puffer_long__full_body.jpg",
+   "render_sha": "0760c0676b9cb6eb",
+   "overlay": "overlays/m2_studio__g8_puffer_long.jpg",
+   "web": "m2_studio__g8_puffer_long.jpg",
+   "alt": "Try-on that needs a closer look: Long puffer coat on Man in a grey T-shirt and black trousers, sports wheelchair, grey studio. The garment touches a wheel, covering 8% of it. Check this before you buy."
+  },
+  {
+   "model": "m3_home",
+   "garment": "g1_long_wool_coat",
+   "category": "full_body",
+   "source_sha": "c749c57dac7c7cb3",
+   "garment_sha": "44527caf078f2a44",
+   "verdict": "fail",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "fail",
+     "value": 0.4805,
+     "unit": "share of worst wheel",
+     "message": "The garment covers 48% of a wheel. It could catch while you push.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.4805
+       },
+       {
+        "kind": "wheel",
+        "share": 0.1433
+       },
+       {
+        "kind": "caster",
+        "share": 0.0097
+       },
+       {
+        "kind": "caster",
+        "share": 0.0132
+       }
+      ],
+      "all_wheels_share": 0.1745
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "pass",
+     "value": 0.946,
+     "unit": "similarity",
+     "message": "The wheelchair matches your photo.",
+     "detail": {
+      "changed_share": 0.0,
+      "worst_wheel_edges_kept": 0.958,
+      "wheels_compared": 4
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "pass",
+     "value": 0.933,
+     "unit": "similarity",
+     "message": "The face and hands match your photo.",
+     "detail": {
+      "face": 0.933,
+      "worst_hand": 0.882
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.2263,
+     "unit": "share of picture",
+     "message": "The garment changed 23% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m3_home__g1_long_wool_coat__full_body.jpg",
+   "render_sha": "101bdde693e169ca",
+   "overlay": "overlays/m3_home__g1_long_wool_coat.jpg",
+   "web": "m3_home__g1_long_wool_coat.jpg",
+   "alt": "Refused render, shown in grey as evidence: Long wool coat on Older woman in a navy top and grey trousers, power wheelchair, living room. The garment covers 48% of a wheel. It could catch while you push."
+  },
+  {
+   "model": "m3_home",
+   "garment": "g2_maxi_dress",
+   "category": "full_body",
+   "source_sha": "c749c57dac7c7cb3",
+   "garment_sha": "0184b4331c38ca39",
+   "verdict": "fail",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "fail",
+     "value": 0.8098,
+     "unit": "share of worst wheel",
+     "message": "The garment covers 81% of a wheel. It could catch while you push.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.0873
+       },
+       {
+        "kind": "wheel",
+        "share": 0.8098
+       },
+       {
+        "kind": "caster",
+        "share": 0.1567
+       },
+       {
+        "kind": "caster",
+        "share": 0.6409
+       }
+      ],
+      "all_wheels_share": 0.424
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "warn",
+     "value": 0.672,
+     "unit": "similarity",
+     "message": "Parts of the wheelchair look slightly different from your photo.",
+     "detail": {
+      "changed_share": 0.0167,
+      "worst_wheel_edges_kept": 0.819,
+      "wheels_compared": 4
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "pass",
+     "value": 0.932,
+     "unit": "similarity",
+     "message": "The face and hands match your photo.",
+     "detail": {
+      "face": 0.932,
+      "worst_hand": 0.829
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.2017,
+     "unit": "share of picture",
+     "message": "The garment changed 20% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m3_home__g2_maxi_dress__full_body.jpg",
+   "render_sha": "ed327179ac12a612",
+   "overlay": "overlays/m3_home__g2_maxi_dress.jpg",
+   "web": "m3_home__g2_maxi_dress.jpg",
+   "alt": "Refused render, shown in grey as evidence: Maxi dress on Older woman in a navy top and grey trousers, power wheelchair, living room. The garment covers 81% of a wheel. It could catch while you push. Parts of the wheelchair look slightly different from your photo."
+  },
+  {
+   "model": "m3_home",
+   "garment": "g3_trench",
+   "category": "full_body",
+   "source_sha": "c749c57dac7c7cb3",
+   "garment_sha": "b593e9f85400205a",
+   "verdict": "fail",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "fail",
+     "value": 0.319,
+     "unit": "share of worst wheel",
+     "message": "The garment covers 32% of a wheel. It could catch while you push.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.1968
+       },
+       {
+        "kind": "wheel",
+        "share": 0.319
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       }
+      ],
+      "all_wheels_share": 0.1379
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "pass",
+     "value": 0.945,
+     "unit": "similarity",
+     "message": "The wheelchair matches your photo.",
+     "detail": {
+      "changed_share": 0.0,
+      "worst_wheel_edges_kept": 0.944,
+      "wheels_compared": 4
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "pass",
+     "value": 0.933,
+     "unit": "similarity",
+     "message": "The face and hands match your photo.",
+     "detail": {
+      "face": 0.933,
+      "worst_hand": 0.761
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.1987,
+     "unit": "share of picture",
+     "message": "The garment changed 20% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m3_home__g3_trench__full_body.jpg",
+   "render_sha": "dcdd531e2164bbe1",
+   "overlay": "overlays/m3_home__g3_trench.jpg",
+   "web": "m3_home__g3_trench.jpg",
+   "alt": "Refused render, shown in grey as evidence: Trench coat on Older woman in a navy top and grey trousers, power wheelchair, living room. The garment covers 32% of a wheel. It could catch while you push."
+  },
+  {
+   "model": "m3_home",
+   "garment": "g4_crop_jacket",
+   "category": "upper_body",
+   "source_sha": "c749c57dac7c7cb3",
+   "garment_sha": "4c71d1c522204af2",
+   "verdict": "pass",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "pass",
+     "value": 0.0,
+     "unit": "share of worst wheel",
+     "message": "The garment stays clear of the wheels.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.0
+       },
+       {
+        "kind": "wheel",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       }
+      ],
+      "all_wheels_share": 0.0
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "pass",
+     "value": 0.948,
+     "unit": "similarity",
+     "message": "The wheelchair matches your photo.",
+     "detail": {
+      "changed_share": 0.0,
+      "worst_wheel_edges_kept": 0.951,
+      "wheels_compared": 4
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "pass",
+     "value": 0.933,
+     "unit": "similarity",
+     "message": "The face and hands match your photo.",
+     "detail": {
+      "face": 0.933,
+      "worst_hand": 0.824
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.0595,
+     "unit": "share of picture",
+     "message": "The garment changed 6% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m3_home__g4_crop_jacket__upper_body.jpg",
+   "render_sha": "a50802ecda866f90",
+   "overlay": "overlays/m3_home__g4_crop_jacket.jpg",
+   "web": "m3_home__g4_crop_jacket.jpg",
+   "alt": "Approved try-on: Cropped jacket on Older woman in a navy top and grey trousers, power wheelchair, living room. All four checks passed: it clears the wheels and the chair, face and hands match the photo."
+  },
+  {
+   "model": "m3_home",
+   "garment": "g5_shirt",
+   "category": "upper_body",
+   "source_sha": "c749c57dac7c7cb3",
+   "garment_sha": "8f0fd9e40763597b",
+   "verdict": "pass",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "pass",
+     "value": 0.0,
+     "unit": "share of worst wheel",
+     "message": "The garment stays clear of the wheels.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.0
+       },
+       {
+        "kind": "wheel",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       }
+      ],
+      "all_wheels_share": 0.0
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "pass",
+     "value": 0.949,
+     "unit": "similarity",
+     "message": "The wheelchair matches your photo.",
+     "detail": {
+      "changed_share": 0.0,
+      "worst_wheel_edges_kept": 0.964,
+      "wheels_compared": 4
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "pass",
+     "value": 0.93,
+     "unit": "similarity",
+     "message": "The face and hands match your photo.",
+     "detail": {
+      "face": 0.93,
+      "worst_hand": 0.846
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.0985,
+     "unit": "share of picture",
+     "message": "The garment changed 10% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m3_home__g5_shirt__upper_body.jpg",
+   "render_sha": "1cddd2e4c65608b3",
+   "overlay": "overlays/m3_home__g5_shirt.jpg",
+   "web": "m3_home__g5_shirt.jpg",
+   "alt": "Approved try-on: Shirt on Older woman in a navy top and grey trousers, power wheelchair, living room. All four checks passed: it clears the wheels and the chair, face and hands match the photo."
+  },
+  {
+   "model": "m3_home",
+   "garment": "g6_knit",
+   "category": "upper_body",
+   "source_sha": "c749c57dac7c7cb3",
+   "garment_sha": "aa1a7013929fe084",
+   "verdict": "pass",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "pass",
+     "value": 0.0,
+     "unit": "share of worst wheel",
+     "message": "The garment stays clear of the wheels.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.0
+       },
+       {
+        "kind": "wheel",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       }
+      ],
+      "all_wheels_share": 0.0
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "pass",
+     "value": 0.948,
+     "unit": "similarity",
+     "message": "The wheelchair matches your photo.",
+     "detail": {
+      "changed_share": 0.0,
+      "worst_wheel_edges_kept": 0.946,
+      "wheels_compared": 4
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "pass",
+     "value": 0.934,
+     "unit": "similarity",
+     "message": "The face and hands match your photo.",
+     "detail": {
+      "face": 0.934,
+      "worst_hand": 0.89
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.1018,
+     "unit": "share of picture",
+     "message": "The garment changed 10% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m3_home__g6_knit__upper_body.jpg",
+   "render_sha": "4e8368d4115c715a",
+   "overlay": "overlays/m3_home__g6_knit.jpg",
+   "web": "m3_home__g6_knit.jpg",
+   "alt": "Approved try-on: Knit jumper on Older woman in a navy top and grey trousers, power wheelchair, living room. All four checks passed: it clears the wheels and the chair, face and hands match the photo."
+  },
+  {
+   "model": "m3_home",
+   "garment": "g7_blazer",
+   "category": "upper_body",
+   "source_sha": "c749c57dac7c7cb3",
+   "garment_sha": "c3edcac66d7876f9",
+   "verdict": "pass",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "pass",
+     "value": 0.0,
+     "unit": "share of worst wheel",
+     "message": "The garment stays clear of the wheels.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.0
+       },
+       {
+        "kind": "wheel",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       }
+      ],
+      "all_wheels_share": 0.0
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "pass",
+     "value": 0.948,
+     "unit": "similarity",
+     "message": "The wheelchair matches your photo.",
+     "detail": {
+      "changed_share": 0.0,
+      "worst_wheel_edges_kept": 0.967,
+      "wheels_compared": 4
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "pass",
+     "value": 0.934,
+     "unit": "similarity",
+     "message": "The face and hands match your photo.",
+     "detail": {
+      "face": 0.934,
+      "worst_hand": 0.861
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.05,
+     "unit": "share of picture",
+     "message": "The garment changed 5% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m3_home__g7_blazer__upper_body.jpg",
+   "render_sha": "bd5f1a6d57ee4d19",
+   "overlay": "overlays/m3_home__g7_blazer.jpg",
+   "web": "m3_home__g7_blazer.jpg",
+   "alt": "Approved try-on: Blazer on Older woman in a navy top and grey trousers, power wheelchair, living room. All four checks passed: it clears the wheels and the chair, face and hands match the photo."
+  },
+  {
+   "model": "m3_home",
+   "garment": "g8_puffer_long",
+   "category": "full_body",
+   "source_sha": "c749c57dac7c7cb3",
+   "garment_sha": "165ddef1e7f76d3a",
+   "verdict": "warn",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "warn",
+     "value": 0.1269,
+     "unit": "share of worst wheel",
+     "message": "The garment touches a wheel, covering 13% of it. Check this before you buy.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.0
+       },
+       {
+        "kind": "wheel",
+        "share": 0.1269
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       }
+      ],
+      "all_wheels_share": 0.0334
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "pass",
+     "value": 0.923,
+     "unit": "similarity",
+     "message": "The wheelchair matches your photo.",
+     "detail": {
+      "changed_share": 0.0014,
+      "worst_wheel_edges_kept": 0.855,
+      "wheels_compared": 4
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "pass",
+     "value": 0.907,
+     "unit": "similarity",
+     "message": "The face and hands match your photo.",
+     "detail": {
+      "face": 0.907,
+      "worst_hand": 0.801
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.1548,
+     "unit": "share of picture",
+     "message": "The garment changed 15% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m3_home__g8_puffer_long__full_body.jpg",
+   "render_sha": "d552a0f838932f52",
+   "overlay": "overlays/m3_home__g8_puffer_long.jpg",
+   "web": "m3_home__g8_puffer_long.jpg",
+   "alt": "Try-on that needs a closer look: Long puffer coat on Older woman in a navy top and grey trousers, power wheelchair, living room. The garment touches a wheel, covering 13% of it. Check this before you buy."
+  },
+  {
+   "model": "m4_home",
+   "garment": "g1_long_wool_coat",
+   "category": "full_body",
+   "source_sha": "2a944a937e0cf43d",
+   "garment_sha": "44527caf078f2a44",
+   "verdict": "fail",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "fail",
+     "value": 0.1976,
+     "unit": "share of worst wheel",
+     "message": "The garment covers 20% of a wheel. It could catch while you push.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.1976
+       },
+       {
+        "kind": "wheel",
+        "share": 0.1295
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       }
+      ],
+      "all_wheels_share": 0.1495
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "pass",
+     "value": 0.945,
+     "unit": "similarity",
+     "message": "The wheelchair matches your photo.",
+     "detail": {
+      "changed_share": 0.0,
+      "worst_wheel_edges_kept": 0.979,
+      "wheels_compared": 4
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "pass",
+     "value": 0.93,
+     "unit": "similarity",
+     "message": "The face and hands match your photo.",
+     "detail": {
+      "face": 0.93,
+      "worst_hand": 0.83
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.1217,
+     "unit": "share of picture",
+     "message": "The garment changed 12% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m4_home__g1_long_wool_coat__full_body.jpg",
+   "render_sha": "5c43326f7069ffc1",
+   "overlay": "overlays/m4_home__g1_long_wool_coat.jpg",
+   "web": "m4_home__g1_long_wool_coat.jpg",
+   "alt": "Refused render, shown in grey as evidence: Long wool coat on Young man in a white T-shirt and jeans, sports wheelchair, hallway. The garment covers 20% of a wheel. It could catch while you push."
+  },
+  {
+   "model": "m4_home",
+   "garment": "g2_maxi_dress",
+   "category": "full_body",
+   "source_sha": "2a944a937e0cf43d",
+   "garment_sha": "0184b4331c38ca39",
+   "verdict": "fail",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "fail",
+     "value": 0.4069,
+     "unit": "share of worst wheel",
+     "message": "The garment covers 41% of a wheel. It could catch while you push.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.4069
+       },
+       {
+        "kind": "wheel",
+        "share": 0.2619
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       }
+      ],
+      "all_wheels_share": 0.3057
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "pass",
+     "value": 0.855,
+     "unit": "similarity",
+     "message": "The wheelchair matches your photo.",
+     "detail": {
+      "changed_share": 0.0061,
+      "worst_wheel_edges_kept": 0.92,
+      "wheels_compared": 4
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "pass",
+     "value": 0.952,
+     "unit": "similarity",
+     "message": "The face and hands match your photo.",
+     "detail": {
+      "face": 0.952,
+      "worst_hand": 0.926
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.1283,
+     "unit": "share of picture",
+     "message": "The garment changed 13% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m4_home__g2_maxi_dress__full_body.jpg",
+   "render_sha": "cf8011263daf34ab",
+   "overlay": "overlays/m4_home__g2_maxi_dress.jpg",
+   "web": "m4_home__g2_maxi_dress.jpg",
+   "alt": "Refused render, shown in grey as evidence: Maxi dress on Young man in a white T-shirt and jeans, sports wheelchair, hallway. The garment covers 41% of a wheel. It could catch while you push."
+  },
+  {
+   "model": "m4_home",
+   "garment": "g3_trench",
+   "category": "full_body",
+   "source_sha": "2a944a937e0cf43d",
+   "garment_sha": "b593e9f85400205a",
+   "verdict": "warn",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "warn",
+     "value": 0.0698,
+     "unit": "share of worst wheel",
+     "message": "The garment touches a wheel, covering 7% of it. Check this before you buy.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.0266
+       },
+       {
+        "kind": "wheel",
+        "share": 0.0698
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       }
+      ],
+      "all_wheels_share": 0.0445
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "pass",
+     "value": 0.941,
+     "unit": "similarity",
+     "message": "The wheelchair matches your photo.",
+     "detail": {
+      "changed_share": 0.0002,
+      "worst_wheel_edges_kept": 0.973,
+      "wheels_compared": 4
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "pass",
+     "value": 0.947,
+     "unit": "similarity",
+     "message": "The face and hands match your photo.",
+     "detail": {
+      "face": 0.947,
+      "worst_hand": 0.769
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.1171,
+     "unit": "share of picture",
+     "message": "The garment changed 12% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m4_home__g3_trench__full_body.jpg",
+   "render_sha": "1d8f306b833d7aca",
+   "overlay": "overlays/m4_home__g3_trench.jpg",
+   "web": "m4_home__g3_trench.jpg",
+   "alt": "Try-on that needs a closer look: Trench coat on Young man in a white T-shirt and jeans, sports wheelchair, hallway. The garment touches a wheel, covering 7% of it. Check this before you buy."
+  },
+  {
+   "model": "m4_home",
+   "garment": "g4_crop_jacket",
+   "category": "upper_body",
+   "source_sha": "2a944a937e0cf43d",
+   "garment_sha": "4c71d1c522204af2",
+   "verdict": "pass",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "pass",
+     "value": 0.0436,
+     "unit": "share of worst wheel",
+     "message": "The garment stays clear of the wheels.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.0325
+       },
+       {
+        "kind": "wheel",
+        "share": 0.0436
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       }
+      ],
+      "all_wheels_share": 0.035
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "pass",
+     "value": 0.951,
+     "unit": "similarity",
+     "message": "The wheelchair matches your photo.",
+     "detail": {
+      "changed_share": 0.0,
+      "worst_wheel_edges_kept": 0.96,
+      "wheels_compared": 4
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "pass",
+     "value": 0.951,
+     "unit": "similarity",
+     "message": "The face and hands match your photo.",
+     "detail": {
+      "face": 0.951,
+      "worst_hand": 0.882
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.092,
+     "unit": "share of picture",
+     "message": "The garment changed 9% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m4_home__g4_crop_jacket__upper_body.jpg",
+   "render_sha": "3286523743a08201",
+   "overlay": "overlays/m4_home__g4_crop_jacket.jpg",
+   "web": "m4_home__g4_crop_jacket.jpg",
+   "alt": "Approved try-on: Cropped jacket on Young man in a white T-shirt and jeans, sports wheelchair, hallway. All four checks passed: it clears the wheels and the chair, face and hands match the photo."
+  },
+  {
+   "model": "m4_home",
+   "garment": "g5_shirt",
+   "category": "upper_body",
+   "source_sha": "2a944a937e0cf43d",
+   "garment_sha": "8f0fd9e40763597b",
+   "verdict": "pass",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "pass",
+     "value": 0.026,
+     "unit": "share of worst wheel",
+     "message": "The garment stays clear of the wheels.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.019
+       },
+       {
+        "kind": "wheel",
+        "share": 0.026
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       }
+      ],
+      "all_wheels_share": 0.0207
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "pass",
+     "value": 0.951,
+     "unit": "similarity",
+     "message": "The wheelchair matches your photo.",
+     "detail": {
+      "changed_share": 0.0,
+      "worst_wheel_edges_kept": 0.982,
+      "wheels_compared": 4
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "pass",
+     "value": 0.95,
+     "unit": "similarity",
+     "message": "The face and hands match your photo.",
+     "detail": {
+      "face": 0.95,
+      "worst_hand": 0.879
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.0287,
+     "unit": "share of picture",
+     "message": "The garment changed 3% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m4_home__g5_shirt__upper_body.jpg",
+   "render_sha": "855a0b16eb5bde33",
+   "overlay": "overlays/m4_home__g5_shirt.jpg",
+   "web": "m4_home__g5_shirt.jpg",
+   "alt": "Approved try-on: Shirt on Young man in a white T-shirt and jeans, sports wheelchair, hallway. All four checks passed: it clears the wheels and the chair, face and hands match the photo."
+  },
+  {
+   "model": "m4_home",
+   "garment": "g6_knit",
+   "category": "upper_body",
+   "source_sha": "2a944a937e0cf43d",
+   "garment_sha": "aa1a7013929fe084",
+   "verdict": "pass",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "pass",
+     "value": 0.0249,
+     "unit": "share of worst wheel",
+     "message": "The garment stays clear of the wheels.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.0156
+       },
+       {
+        "kind": "wheel",
+        "share": 0.0249
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       }
+      ],
+      "all_wheels_share": 0.0187
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "pass",
+     "value": 0.95,
+     "unit": "similarity",
+     "message": "The wheelchair matches your photo.",
+     "detail": {
+      "changed_share": 0.0001,
+      "worst_wheel_edges_kept": 0.977,
+      "wheels_compared": 4
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "pass",
+     "value": 0.951,
+     "unit": "similarity",
+     "message": "The face and hands match your photo.",
+     "detail": {
+      "face": 0.951,
+      "worst_hand": 0.864
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.0913,
+     "unit": "share of picture",
+     "message": "The garment changed 9% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m4_home__g6_knit__upper_body.jpg",
+   "render_sha": "ad4c49a9bd968e18",
+   "overlay": "overlays/m4_home__g6_knit.jpg",
+   "web": "m4_home__g6_knit.jpg",
+   "alt": "Approved try-on: Knit jumper on Young man in a white T-shirt and jeans, sports wheelchair, hallway. All four checks passed: it clears the wheels and the chair, face and hands match the photo."
+  },
+  {
+   "model": "m4_home",
+   "garment": "g7_blazer",
+   "category": "upper_body",
+   "source_sha": "2a944a937e0cf43d",
+   "garment_sha": "c3edcac66d7876f9",
+   "verdict": "pass",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "pass",
+     "value": 0.0469,
+     "unit": "share of worst wheel",
+     "message": "The garment stays clear of the wheels.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.0074
+       },
+       {
+        "kind": "wheel",
+        "share": 0.0469
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       }
+      ],
+      "all_wheels_share": 0.0252
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "pass",
+     "value": 0.95,
+     "unit": "similarity",
+     "message": "The wheelchair matches your photo.",
+     "detail": {
+      "changed_share": 0.0,
+      "worst_wheel_edges_kept": 0.978,
+      "wheels_compared": 4
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "pass",
+     "value": 0.953,
+     "unit": "similarity",
+     "message": "The face and hands match your photo.",
+     "detail": {
+      "face": 0.953,
+      "worst_hand": 0.862
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.0861,
+     "unit": "share of picture",
+     "message": "The garment changed 9% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m4_home__g7_blazer__upper_body.jpg",
+   "render_sha": "ce9a1aa745d8ea77",
+   "overlay": "overlays/m4_home__g7_blazer.jpg",
+   "web": "m4_home__g7_blazer.jpg",
+   "alt": "Approved try-on: Blazer on Young man in a white T-shirt and jeans, sports wheelchair, hallway. All four checks passed: it clears the wheels and the chair, face and hands match the photo."
+  },
+  {
+   "model": "m4_home",
+   "garment": "g8_puffer_long",
+   "category": "full_body",
+   "source_sha": "2a944a937e0cf43d",
+   "garment_sha": "165ddef1e7f76d3a",
+   "verdict": "fail",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "fail",
+     "value": 0.2137,
+     "unit": "share of worst wheel",
+     "message": "The garment covers 21% of a wheel. It could catch while you push.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.2137
+       },
+       {
+        "kind": "wheel",
+        "share": 0.1832
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       }
+      ],
+      "all_wheels_share": 0.1818
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "pass",
+     "value": 0.937,
+     "unit": "similarity",
+     "message": "The wheelchair matches your photo.",
+     "detail": {
+      "changed_share": 0.0027,
+      "worst_wheel_edges_kept": 0.961,
+      "wheels_compared": 4
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "pass",
+     "value": 0.866,
+     "unit": "similarity",
+     "message": "The face and hands match your photo.",
+     "detail": {
+      "face": 0.866,
+      "worst_hand": 0.853
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.1132,
+     "unit": "share of picture",
+     "message": "The garment changed 11% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m4_home__g8_puffer_long__full_body.jpg",
+   "render_sha": "8b23a6f96cd8a823",
+   "overlay": "overlays/m4_home__g8_puffer_long.jpg",
+   "web": "m4_home__g8_puffer_long.jpg",
+   "alt": "Refused render, shown in grey as evidence: Long puffer coat on Young man in a white T-shirt and jeans, sports wheelchair, hallway. The garment covers 21% of a wheel. It could catch while you push."
+  },
+  {
+   "model": "m5_outdoor",
+   "garment": "g1_long_wool_coat",
+   "category": "full_body",
+   "source_sha": "a4a4e2528ef10b3f",
+   "garment_sha": "44527caf078f2a44",
+   "verdict": "pass",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "pass",
+     "value": 0.0,
+     "unit": "share of worst wheel",
+     "message": "The garment stays clear of the wheels.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.0
+       },
+       {
+        "kind": "wheel",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       }
+      ],
+      "all_wheels_share": 0.0
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "pass",
+     "value": 0.942,
+     "unit": "similarity",
+     "message": "The wheelchair matches your photo.",
+     "detail": {
+      "changed_share": 0.0044,
+      "worst_wheel_edges_kept": 0.971,
+      "wheels_compared": 4
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "pass",
+     "value": 0.922,
+     "unit": "similarity",
+     "message": "The face and hands match your photo.",
+     "detail": {
+      "face": 0.922,
+      "worst_hand": 0.91
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.146,
+     "unit": "share of picture",
+     "message": "The garment changed 15% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m5_outdoor__g1_long_wool_coat__full_body.jpg",
+   "render_sha": "be5aeb67324e379f",
+   "overlay": "overlays/m5_outdoor__g1_long_wool_coat.jpg",
+   "web": "m5_outdoor__g1_long_wool_coat.jpg",
+   "alt": "Approved try-on: Long wool coat on Woman in a black top and navy trousers, manual wheelchair, outdoors on a pavement. All four checks passed: it clears the wheels and the chair, face and hands match the photo."
+  },
+  {
+   "model": "m5_outdoor",
+   "garment": "g2_maxi_dress",
+   "category": "full_body",
+   "source_sha": "a4a4e2528ef10b3f",
+   "garment_sha": "0184b4331c38ca39",
+   "verdict": "fail",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "fail",
+     "value": 0.6229,
+     "unit": "share of worst wheel",
+     "message": "The garment covers 62% of a wheel. It could catch while you push.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.0
+       },
+       {
+        "kind": "wheel",
+        "share": 0.6229
+       },
+       {
+        "kind": "caster",
+        "share": 0.0008
+       },
+       {
+        "kind": "caster",
+        "share": 0.3042
+       }
+      ],
+      "all_wheels_share": 0.2077
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "pass",
+     "value": 0.871,
+     "unit": "similarity",
+     "message": "The wheelchair matches your photo.",
+     "detail": {
+      "changed_share": 0.0032,
+      "worst_wheel_edges_kept": 0.806,
+      "wheels_compared": 4
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "pass",
+     "value": 0.939,
+     "unit": "similarity",
+     "message": "The face and hands match your photo.",
+     "detail": {
+      "face": 0.939,
+      "worst_hand": 0.87
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.1564,
+     "unit": "share of picture",
+     "message": "The garment changed 16% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m5_outdoor__g2_maxi_dress__full_body.jpg",
+   "render_sha": "be6e7bb73317d20d",
+   "overlay": "overlays/m5_outdoor__g2_maxi_dress.jpg",
+   "web": "m5_outdoor__g2_maxi_dress.jpg",
+   "alt": "Refused render, shown in grey as evidence: Maxi dress on Woman in a black top and navy trousers, manual wheelchair, outdoors on a pavement. The garment covers 62% of a wheel. It could catch while you push."
+  },
+  {
+   "model": "m5_outdoor",
+   "garment": "g3_trench",
+   "category": "full_body",
+   "source_sha": "a4a4e2528ef10b3f",
+   "garment_sha": "b593e9f85400205a",
+   "verdict": "pass",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "pass",
+     "value": 0.0,
+     "unit": "share of worst wheel",
+     "message": "The garment stays clear of the wheels.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.0
+       },
+       {
+        "kind": "wheel",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       }
+      ],
+      "all_wheels_share": 0.0
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "pass",
+     "value": 0.945,
+     "unit": "similarity",
+     "message": "The wheelchair matches your photo.",
+     "detail": {
+      "changed_share": 0.0,
+      "worst_wheel_edges_kept": 0.956,
+      "wheels_compared": 4
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "pass",
+     "value": 0.915,
+     "unit": "similarity",
+     "message": "The face and hands match your photo.",
+     "detail": {
+      "face": 0.915,
+      "worst_hand": 0.743
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.1193,
+     "unit": "share of picture",
+     "message": "The garment changed 12% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m5_outdoor__g3_trench__full_body.jpg",
+   "render_sha": "13b00c188fa1334b",
+   "overlay": "overlays/m5_outdoor__g3_trench.jpg",
+   "web": "m5_outdoor__g3_trench.jpg",
+   "alt": "Approved try-on: Trench coat on Woman in a black top and navy trousers, manual wheelchair, outdoors on a pavement. All four checks passed: it clears the wheels and the chair, face and hands match the photo."
+  },
+  {
+   "model": "m5_outdoor",
+   "garment": "g4_crop_jacket",
+   "category": "upper_body",
+   "source_sha": "a4a4e2528ef10b3f",
+   "garment_sha": "4c71d1c522204af2",
+   "verdict": "pass",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "pass",
+     "value": 0.0,
+     "unit": "share of worst wheel",
+     "message": "The garment stays clear of the wheels.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.0
+       },
+       {
+        "kind": "wheel",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       }
+      ],
+      "all_wheels_share": 0.0
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "pass",
+     "value": 0.945,
+     "unit": "similarity",
+     "message": "The wheelchair matches your photo.",
+     "detail": {
+      "changed_share": 0.0,
+      "worst_wheel_edges_kept": 0.956,
+      "wheels_compared": 4
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "pass",
+     "value": 0.932,
+     "unit": "similarity",
+     "message": "The face and hands match your photo.",
+     "detail": {
+      "face": 0.932,
+      "worst_hand": 0.868
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.011,
+     "unit": "share of picture",
+     "message": "The garment changed 1% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m5_outdoor__g4_crop_jacket__upper_body.jpg",
+   "render_sha": "ca422aa79a333b06",
+   "overlay": "overlays/m5_outdoor__g4_crop_jacket.jpg",
+   "web": "m5_outdoor__g4_crop_jacket.jpg",
+   "alt": "Approved try-on: Cropped jacket on Woman in a black top and navy trousers, manual wheelchair, outdoors on a pavement. All four checks passed: it clears the wheels and the chair, face and hands match the photo."
+  },
+  {
+   "model": "m5_outdoor",
+   "garment": "g5_shirt",
+   "category": "upper_body",
+   "source_sha": "a4a4e2528ef10b3f",
+   "garment_sha": "8f0fd9e40763597b",
+   "verdict": "pass",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "pass",
+     "value": 0.0,
+     "unit": "share of worst wheel",
+     "message": "The garment stays clear of the wheels.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.0
+       },
+       {
+        "kind": "wheel",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       }
+      ],
+      "all_wheels_share": 0.0
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "pass",
+     "value": 0.946,
+     "unit": "similarity",
+     "message": "The wheelchair matches your photo.",
+     "detail": {
+      "changed_share": 0.0,
+      "worst_wheel_edges_kept": 0.958,
+      "wheels_compared": 4
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "pass",
+     "value": 0.917,
+     "unit": "similarity",
+     "message": "The face and hands match your photo.",
+     "detail": {
+      "face": 0.917,
+      "worst_hand": 0.913
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.0669,
+     "unit": "share of picture",
+     "message": "The garment changed 7% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m5_outdoor__g5_shirt__upper_body.jpg",
+   "render_sha": "b7686ca02ee49314",
+   "overlay": "overlays/m5_outdoor__g5_shirt.jpg",
+   "web": "m5_outdoor__g5_shirt.jpg",
+   "alt": "Approved try-on: Shirt on Woman in a black top and navy trousers, manual wheelchair, outdoors on a pavement. All four checks passed: it clears the wheels and the chair, face and hands match the photo."
+  },
+  {
+   "model": "m5_outdoor",
+   "garment": "g6_knit",
+   "category": "upper_body",
+   "source_sha": "a4a4e2528ef10b3f",
+   "garment_sha": "aa1a7013929fe084",
+   "verdict": "pass",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "pass",
+     "value": 0.0,
+     "unit": "share of worst wheel",
+     "message": "The garment stays clear of the wheels.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.0
+       },
+       {
+        "kind": "wheel",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       }
+      ],
+      "all_wheels_share": 0.0
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "pass",
+     "value": 0.946,
+     "unit": "similarity",
+     "message": "The wheelchair matches your photo.",
+     "detail": {
+      "changed_share": 0.0,
+      "worst_wheel_edges_kept": 0.971,
+      "wheels_compared": 4
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "pass",
+     "value": 0.938,
+     "unit": "similarity",
+     "message": "The face and hands match your photo.",
+     "detail": {
+      "face": 0.938,
+      "worst_hand": 0.872
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.0732,
+     "unit": "share of picture",
+     "message": "The garment changed 7% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m5_outdoor__g6_knit__upper_body.jpg",
+   "render_sha": "f10dc90f7c82a413",
+   "overlay": "overlays/m5_outdoor__g6_knit.jpg",
+   "web": "m5_outdoor__g6_knit.jpg",
+   "alt": "Approved try-on: Knit jumper on Woman in a black top and navy trousers, manual wheelchair, outdoors on a pavement. All four checks passed: it clears the wheels and the chair, face and hands match the photo."
+  },
+  {
+   "model": "m5_outdoor",
+   "garment": "g7_blazer",
+   "category": "upper_body",
+   "source_sha": "a4a4e2528ef10b3f",
+   "garment_sha": "c3edcac66d7876f9",
+   "verdict": "pass",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "pass",
+     "value": 0.0,
+     "unit": "share of worst wheel",
+     "message": "The garment stays clear of the wheels.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.0
+       },
+       {
+        "kind": "wheel",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       }
+      ],
+      "all_wheels_share": 0.0
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "pass",
+     "value": 0.946,
+     "unit": "similarity",
+     "message": "The wheelchair matches your photo.",
+     "detail": {
+      "changed_share": 0.0,
+      "worst_wheel_edges_kept": 0.967,
+      "wheels_compared": 4
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "pass",
+     "value": 0.934,
+     "unit": "similarity",
+     "message": "The face and hands match your photo.",
+     "detail": {
+      "face": 0.934,
+      "worst_hand": 0.896
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.0188,
+     "unit": "share of picture",
+     "message": "The garment changed 2% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m5_outdoor__g7_blazer__upper_body.jpg",
+   "render_sha": "3e76b8bb4b2d7182",
+   "overlay": "overlays/m5_outdoor__g7_blazer.jpg",
+   "web": "m5_outdoor__g7_blazer.jpg",
+   "alt": "Approved try-on: Blazer on Woman in a black top and navy trousers, manual wheelchair, outdoors on a pavement. All four checks passed: it clears the wheels and the chair, face and hands match the photo."
+  },
+  {
+   "model": "m5_outdoor",
+   "garment": "g8_puffer_long",
+   "category": "full_body",
+   "source_sha": "a4a4e2528ef10b3f",
+   "garment_sha": "165ddef1e7f76d3a",
+   "verdict": "pass",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "pass",
+     "value": 0.0,
+     "unit": "share of worst wheel",
+     "message": "The garment stays clear of the wheels.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.0
+       },
+       {
+        "kind": "wheel",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       }
+      ],
+      "all_wheels_share": 0.0
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "pass",
+     "value": 0.945,
+     "unit": "similarity",
+     "message": "The wheelchair matches your photo.",
+     "detail": {
+      "changed_share": 0.0,
+      "worst_wheel_edges_kept": 0.965,
+      "wheels_compared": 4
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "pass",
+     "value": 0.847,
+     "unit": "similarity",
+     "message": "The face and hands match your photo.",
+     "detail": {
+      "face": 0.847,
+      "worst_hand": 0.77
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.0308,
+     "unit": "share of picture",
+     "message": "The garment changed 3% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m5_outdoor__g8_puffer_long__full_body.jpg",
+   "render_sha": "f78e4137c5266444",
+   "overlay": "overlays/m5_outdoor__g8_puffer_long.jpg",
+   "web": "m5_outdoor__g8_puffer_long.jpg",
+   "alt": "Approved try-on: Long puffer coat on Woman in a black top and navy trousers, manual wheelchair, outdoors on a pavement. All four checks passed: it clears the wheels and the chair, face and hands match the photo."
+  },
+  {
+   "model": "m6_side",
+   "garment": "g1_long_wool_coat",
+   "category": "full_body",
+   "source_sha": "a8bfb8de23bb7857",
+   "garment_sha": "44527caf078f2a44",
+   "verdict": "pass",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "pass",
+     "value": 0.0,
+     "unit": "share of worst wheel",
+     "message": "The garment stays clear of the wheels.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       }
+      ],
+      "all_wheels_share": 0.0
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "pass",
+     "value": 0.933,
+     "unit": "similarity",
+     "message": "The wheelchair matches your photo.",
+     "detail": {
+      "changed_share": 0.0,
+      "worst_wheel_edges_kept": 0.98,
+      "wheels_compared": 3
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "pass",
+     "value": 0.916,
+     "unit": "similarity",
+     "message": "The face and hands match your photo.",
+     "detail": {
+      "face": 0.916,
+      "worst_hand": 0.85
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.1518,
+     "unit": "share of picture",
+     "message": "The garment changed 15% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m6_side__g1_long_wool_coat__full_body.jpg",
+   "render_sha": "14089d29ca3b9030",
+   "overlay": "overlays/m6_side__g1_long_wool_coat.jpg",
+   "web": "m6_side__g1_long_wool_coat.jpg",
+   "alt": "Approved try-on: Long wool coat on Older man in a blue T-shirt and grey trousers, manual wheelchair, three-quarter view. All four checks passed: it clears the wheels and the chair, face and hands match the photo."
+  },
+  {
+   "model": "m6_side",
+   "garment": "g2_maxi_dress",
+   "category": "full_body",
+   "source_sha": "a8bfb8de23bb7857",
+   "garment_sha": "0184b4331c38ca39",
+   "verdict": "fail",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "fail",
+     "value": 0.5022,
+     "unit": "share of worst wheel",
+     "message": "The garment covers 50% of a wheel. It could catch while you push.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.1345
+       },
+       {
+        "kind": "caster",
+        "share": 0.5022
+       }
+      ],
+      "all_wheels_share": 0.0416
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "pass",
+     "value": 0.923,
+     "unit": "similarity",
+     "message": "The wheelchair matches your photo.",
+     "detail": {
+      "changed_share": 0.0011,
+      "worst_wheel_edges_kept": 0.96,
+      "wheels_compared": 3
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "pass",
+     "value": 0.915,
+     "unit": "similarity",
+     "message": "The face and hands match your photo.",
+     "detail": {
+      "face": 0.915,
+      "worst_hand": 0.736
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.1442,
+     "unit": "share of picture",
+     "message": "The garment changed 14% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m6_side__g2_maxi_dress__full_body.jpg",
+   "render_sha": "0356bbe78024ea66",
+   "overlay": "overlays/m6_side__g2_maxi_dress.jpg",
+   "web": "m6_side__g2_maxi_dress.jpg",
+   "alt": "Refused render, shown in grey as evidence: Maxi dress on Older man in a blue T-shirt and grey trousers, manual wheelchair, three-quarter view. The garment covers 50% of a wheel. It could catch while you push."
+  },
+  {
+   "model": "m6_side",
+   "garment": "g3_trench",
+   "category": "full_body",
+   "source_sha": "a8bfb8de23bb7857",
+   "garment_sha": "b593e9f85400205a",
+   "verdict": "pass",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "pass",
+     "value": 0.0,
+     "unit": "share of worst wheel",
+     "message": "The garment stays clear of the wheels.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       }
+      ],
+      "all_wheels_share": 0.0
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "pass",
+     "value": 0.935,
+     "unit": "similarity",
+     "message": "The wheelchair matches your photo.",
+     "detail": {
+      "changed_share": 0.0,
+      "worst_wheel_edges_kept": 0.98,
+      "wheels_compared": 3
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "pass",
+     "value": 0.917,
+     "unit": "similarity",
+     "message": "The face and hands match your photo.",
+     "detail": {
+      "face": 0.917,
+      "worst_hand": 0.678
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.1286,
+     "unit": "share of picture",
+     "message": "The garment changed 13% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m6_side__g3_trench__full_body.jpg",
+   "render_sha": "4fec354d5fd54e63",
+   "overlay": "overlays/m6_side__g3_trench.jpg",
+   "web": "m6_side__g3_trench.jpg",
+   "alt": "Approved try-on: Trench coat on Older man in a blue T-shirt and grey trousers, manual wheelchair, three-quarter view. All four checks passed: it clears the wheels and the chair, face and hands match the photo."
+  },
+  {
+   "model": "m6_side",
+   "garment": "g4_crop_jacket",
+   "category": "upper_body",
+   "source_sha": "a8bfb8de23bb7857",
+   "garment_sha": "4c71d1c522204af2",
+   "verdict": "pass",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "pass",
+     "value": 0.0,
+     "unit": "share of worst wheel",
+     "message": "The garment stays clear of the wheels.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       }
+      ],
+      "all_wheels_share": 0.0
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "pass",
+     "value": 0.936,
+     "unit": "similarity",
+     "message": "The wheelchair matches your photo.",
+     "detail": {
+      "changed_share": 0.0,
+      "worst_wheel_edges_kept": 0.993,
+      "wheels_compared": 3
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "pass",
+     "value": 0.918,
+     "unit": "similarity",
+     "message": "The face and hands match your photo.",
+     "detail": {
+      "face": 0.918,
+      "worst_hand": 0.882
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.066,
+     "unit": "share of picture",
+     "message": "The garment changed 7% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m6_side__g4_crop_jacket__upper_body.jpg",
+   "render_sha": "27eb3a3b20131ccd",
+   "overlay": "overlays/m6_side__g4_crop_jacket.jpg",
+   "web": "m6_side__g4_crop_jacket.jpg",
+   "alt": "Approved try-on: Cropped jacket on Older man in a blue T-shirt and grey trousers, manual wheelchair, three-quarter view. All four checks passed: it clears the wheels and the chair, face and hands match the photo."
+  },
+  {
+   "model": "m6_side",
+   "garment": "g5_shirt",
+   "category": "upper_body",
+   "source_sha": "a8bfb8de23bb7857",
+   "garment_sha": "8f0fd9e40763597b",
+   "verdict": "pass",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "pass",
+     "value": 0.0,
+     "unit": "share of worst wheel",
+     "message": "The garment stays clear of the wheels.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       }
+      ],
+      "all_wheels_share": 0.0
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "pass",
+     "value": 0.936,
+     "unit": "similarity",
+     "message": "The wheelchair matches your photo.",
+     "detail": {
+      "changed_share": 0.0,
+      "worst_wheel_edges_kept": 0.994,
+      "wheels_compared": 3
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "pass",
+     "value": 0.915,
+     "unit": "similarity",
+     "message": "The face and hands match your photo.",
+     "detail": {
+      "face": 0.915,
+      "worst_hand": 0.825
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.0652,
+     "unit": "share of picture",
+     "message": "The garment changed 7% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m6_side__g5_shirt__upper_body.jpg",
+   "render_sha": "392743c829e2f7b1",
+   "overlay": "overlays/m6_side__g5_shirt.jpg",
+   "web": "m6_side__g5_shirt.jpg",
+   "alt": "Approved try-on: Shirt on Older man in a blue T-shirt and grey trousers, manual wheelchair, three-quarter view. All four checks passed: it clears the wheels and the chair, face and hands match the photo."
+  },
+  {
+   "model": "m6_side",
+   "garment": "g6_knit",
+   "category": "upper_body",
+   "source_sha": "a8bfb8de23bb7857",
+   "garment_sha": "aa1a7013929fe084",
+   "verdict": "pass",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "pass",
+     "value": 0.0,
+     "unit": "share of worst wheel",
+     "message": "The garment stays clear of the wheels.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       }
+      ],
+      "all_wheels_share": 0.0
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "pass",
+     "value": 0.936,
+     "unit": "similarity",
+     "message": "The wheelchair matches your photo.",
+     "detail": {
+      "changed_share": 0.0,
+      "worst_wheel_edges_kept": 0.988,
+      "wheels_compared": 3
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "pass",
+     "value": 0.917,
+     "unit": "similarity",
+     "message": "The face and hands match your photo.",
+     "detail": {
+      "face": 0.917,
+      "worst_hand": 0.893
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.0709,
+     "unit": "share of picture",
+     "message": "The garment changed 7% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m6_side__g6_knit__upper_body.jpg",
+   "render_sha": "027bff9c5438d056",
+   "overlay": "overlays/m6_side__g6_knit.jpg",
+   "web": "m6_side__g6_knit.jpg",
+   "alt": "Approved try-on: Knit jumper on Older man in a blue T-shirt and grey trousers, manual wheelchair, three-quarter view. All four checks passed: it clears the wheels and the chair, face and hands match the photo."
+  },
+  {
+   "model": "m6_side",
+   "garment": "g7_blazer",
+   "category": "upper_body",
+   "source_sha": "a8bfb8de23bb7857",
+   "garment_sha": "c3edcac66d7876f9",
+   "verdict": "pass",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "pass",
+     "value": 0.0,
+     "unit": "share of worst wheel",
+     "message": "The garment stays clear of the wheels.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       }
+      ],
+      "all_wheels_share": 0.0
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "pass",
+     "value": 0.936,
+     "unit": "similarity",
+     "message": "The wheelchair matches your photo.",
+     "detail": {
+      "changed_share": 0.0,
+      "worst_wheel_edges_kept": 0.99,
+      "wheels_compared": 3
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "pass",
+     "value": 0.918,
+     "unit": "similarity",
+     "message": "The face and hands match your photo.",
+     "detail": {
+      "face": 0.918,
+      "worst_hand": 0.879
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.0648,
+     "unit": "share of picture",
+     "message": "The garment changed 6% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m6_side__g7_blazer__upper_body.jpg",
+   "render_sha": "5f103150e337bf09",
+   "overlay": "overlays/m6_side__g7_blazer.jpg",
+   "web": "m6_side__g7_blazer.jpg",
+   "alt": "Approved try-on: Blazer on Older man in a blue T-shirt and grey trousers, manual wheelchair, three-quarter view. All four checks passed: it clears the wheels and the chair, face and hands match the photo."
+  },
+  {
+   "model": "m6_side",
+   "garment": "g8_puffer_long",
+   "category": "full_body",
+   "source_sha": "a8bfb8de23bb7857",
+   "garment_sha": "165ddef1e7f76d3a",
+   "verdict": "pass",
+   "checks": [
+    {
+     "id": "clearance",
+     "name": "Wheel clearance",
+     "status": "pass",
+     "value": 0.0349,
+     "unit": "share of worst wheel",
+     "message": "The garment stays clear of the wheels.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.0349
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       },
+       {
+        "kind": "caster",
+        "share": 0.0
+       }
+      ],
+      "all_wheels_share": 0.0285
+     }
+    },
+    {
+     "id": "chair",
+     "name": "Wheelchair intact",
+     "status": "pass",
+     "value": 0.914,
+     "unit": "similarity",
+     "message": "The wheelchair matches your photo.",
+     "detail": {
+      "changed_share": 0.0007,
+      "worst_wheel_edges_kept": 0.937,
+      "wheels_compared": 3
+     }
+    },
+    {
+     "id": "person",
+     "name": "Face and hands",
+     "status": "pass",
+     "value": 0.898,
+     "unit": "similarity",
+     "message": "The face and hands match your photo.",
+     "detail": {
+      "face": 0.898,
+      "worst_hand": 0.806
+     }
+    },
+    {
+     "id": "change",
+     "name": "Garment applied",
+     "status": "pass",
+     "value": 0.1356,
+     "unit": "share of picture",
+     "message": "The garment changed 14% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render": "proof_results/renders/m6_side__g8_puffer_long__full_body.jpg",
+   "render_sha": "a11e50a091319a1c",
+   "overlay": "overlays/m6_side__g8_puffer_long.jpg",
+   "web": "m6_side__g8_puffer_long.jpg",
+   "alt": "Approved try-on: Long puffer coat on Older man in a blue T-shirt and grey trousers, manual wheelchair, three-quarter view. All four checks passed: it clears the wheels and the chair, face and hands match the photo."
+  }
+ ]
+}

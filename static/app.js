@@ -355,8 +355,9 @@ function buildRetail() {
 function openDetail(m, g) {
   const c = cell(m, g);
   const gm = garment(g);
-  $("#detail-body").innerHTML = `<h2 id="detail-title">${esc(gm.name)} on ${esc(NAMES[m])}</h2><p class="note">${esc(modelDesc(m))}. AI-generated.</p>${resultHtml(c, gm, `/media/garments/${g}.jpg`, `/media/overlays/${c.web}`, c.alt)}`;
+  $("#detail-body").innerHTML = `<h2 id="detail-title" tabindex="-1">${esc(gm.name)} on ${esc(NAMES[m])}</h2><p class="note">${esc(modelDesc(m))}. AI-generated.</p>${resultHtml(c, gm, `/media/garments/${g}.jpg`, `/media/overlays/${c.web}`, c.alt)}`;
   $("#detail").showModal();
+  $("#detail-title").focus();
 }
 
 function route() {

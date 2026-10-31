@@ -1,0 +1,183 @@
+{
+ "photo": "assets/models/m2_studio.png",
+ "path": "upload, fresh paid render",
+ "marks_from": "the marking control in a real browser, read by eye off the photo; no regions.json data",
+ "marks": [
+  {
+   "kind": "wheel",
+   "x": 0.35200001757432514,
+   "y": 0.7319999724510579,
+   "w": 0.045,
+   "h": 0.28
+  },
+  {
+   "kind": "wheel",
+   "x": 0.65,
+   "y": 0.73,
+   "w": 0.05000000000000002,
+   "h": 0.27999999999999997
+  },
+  {
+   "kind": "caster",
+   "x": 0.355,
+   "y": 0.875,
+   "w": 0.03,
+   "h": 0.1
+  },
+  {
+   "kind": "caster",
+   "x": 0.64,
+   "y": 0.875,
+   "w": 0.03,
+   "h": 0.1
+  }
+ ],
+ "live_text_heard": [
+  "Big wheel 1: 35% across, 73% down, 10% wide, 30% tall.",
+  "Big wheel 1: 35% across, 73% down, 5% wide, 28% tall.",
+  "Big wheel 2: 65% across, 73% down, 5% wide, 28% tall.",
+  "Small wheel 3: 36% across, 88% down, 3% wide, 10% tall.",
+  "Small wheel 4: 64% across, 88% down, 3% wide, 10% tall."
+ ],
+ "runs": [
+  {
+   "garment": "g1_long_wool_coat",
+   "mode": "live",
+   "saved_render": false,
+   "error": null,
+   "verdict": "fail",
+   "wheels_marked": 4,
+   "checks": [
+    {
+     "id": "clearance",
+     "status": "fail",
+     "value": 0.6126,
+     "message": "The garment covers 61% of a wheel. It could catch while you push.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0.6126
+       },
+       {
+        "kind": "wheel",
+        "share": 0.4591
+       },
+       {
+        "kind": "caster",
+        "share": 0
+       },
+       {
+        "kind": "caster",
+        "share": 0
+       }
+      ],
+      "all_wheels_share": 0.4594,
+      "marks_off_an_outline": 0
+     }
+    },
+    {
+     "id": "chair",
+     "status": "pass",
+     "value": 0.887,
+     "message": "The wheels you marked match your photo.",
+     "detail": {
+      "changed_share": 0.0335,
+      "worst_wheel_edges_kept": 0.621,
+      "wheels_compared": 4
+     }
+    },
+    {
+     "id": "person",
+     "status": "pass",
+     "value": 0.954,
+     "message": "The face matches your photo. Hands were not compared.",
+     "detail": {
+      "face": 0.954,
+      "worst_hand": null
+     }
+    },
+    {
+     "id": "change",
+     "status": "pass",
+     "value": 0.1519,
+     "message": "The garment changed 15% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render_returned": false,
+   "verdict_from_eye_marks_in_matrix": "fail",
+   "clearance_from_eye_marks_in_matrix": 0.593
+  },
+  {
+   "garment": "g4_crop_jacket",
+   "mode": "live",
+   "saved_render": false,
+   "error": null,
+   "verdict": "pass",
+   "wheels_marked": 4,
+   "checks": [
+    {
+     "id": "clearance",
+     "status": "pass",
+     "value": 0,
+     "message": "The garment stays clear of the wheels you marked.",
+     "detail": {
+      "per_wheel": [
+       {
+        "kind": "wheel",
+        "share": 0
+       },
+       {
+        "kind": "wheel",
+        "share": 0
+       },
+       {
+        "kind": "caster",
+        "share": 0
+       },
+       {
+        "kind": "caster",
+        "share": 0
+       }
+      ],
+      "all_wheels_share": 0,
+      "marks_off_an_outline": 0
+     }
+    },
+    {
+     "id": "chair",
+     "status": "pass",
+     "value": 0.964,
+     "message": "The wheels you marked match your photo.",
+     "detail": {
+      "changed_share": 0,
+      "worst_wheel_edges_kept": 0.931,
+      "wheels_compared": 4
+     }
+    },
+    {
+     "id": "person",
+     "status": "pass",
+     "value": 0.957,
+     "message": "The face matches your photo. Hands were not compared.",
+     "detail": {
+      "face": 0.957,
+      "worst_hand": null
+     }
+    },
+    {
+     "id": "change",
+     "status": "pass",
+     "value": 0.0811,
+     "message": "The garment changed 8% of the picture, so this is a real try-on.",
+     "detail": {}
+    }
+   ],
+   "render_returned": true,
+   "verdict_from_eye_marks_in_matrix": "pass",
+   "clearance_from_eye_marks_in_matrix": 0
+  }
+ ],
+ "script_errors": []
+}

@@ -11,7 +11,7 @@
    "view": "shop",
    "width": 1280,
    "violations": 0,
-   "passes": 22,
+   "passes": 23,
    "incomplete": [],
    "horizontal_overflow": false,
    "details": []
@@ -35,6 +35,20 @@
    "details": []
   },
   {
+   "view": "hero above the fold",
+   "width": 1280,
+   "fits": true
+  },
+  {
+   "view": "marking control",
+   "width": 1280,
+   "violations": 0,
+   "passes": 24,
+   "incomplete": [],
+   "horizontal_overflow": false,
+   "details": []
+  },
+  {
    "view": "script errors",
    "width": 1280,
    "errors": []
@@ -43,7 +57,7 @@
    "view": "shop",
    "width": 390,
    "violations": 0,
-   "passes": 22,
+   "passes": 23,
    "incomplete": [],
    "horizontal_overflow": false,
    "details": []
@@ -69,11 +83,36 @@
    "details": []
   },
   {
+   "view": "hero above the fold",
+   "width": 390,
+   "fits": true
+  },
+  {
+   "view": "marking control",
+   "width": 390,
+   "violations": 0,
+   "passes": 24,
+   "incomplete": [],
+   "horizontal_overflow": false,
+   "details": []
+  },
+  {
    "view": "script errors",
    "width": 390,
    "errors": []
   }
  ],
+ "marking_keyboard": {
+  "added": "Big wheel 1: 35% across, 72% down, 10% wide, 30% tall.",
+  "focus_lands_on_the_mark": true,
+  "moved": "Big wheel 1: 36% across, 72% down, 10% wide, 30% tall.",
+  "resized": "Big wheel 1: 36% across, 72% down, 11% wide, 30% tall.",
+  "after_delete": "0 marks placed."
+ },
+ "marking_touch": {
+  "after_tap": "Big wheel 1: 60% across, 30% down, 10% wide, 30% tall.",
+  "after_drag": "Big wheel 1: 40% across, 40% down, 10% wide, 30% tall."
+ },
  "keyboard": {
   "dialog_opens_with_enter": true,
   "dialog_closes_with_escape": true,

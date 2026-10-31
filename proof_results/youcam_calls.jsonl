@@ -634,3 +634,25 @@
 {"at": "2026-10-31T10:55:32+00:00", "call": "task_poll", "attempt": 0, "http": 200, "feature": "skin_tone", "model": "m2_studio"}
 {"at": "2026-10-31T10:55:35+00:00", "call": "task_poll", "attempt": 0, "http": 200, "feature": "skin_tone", "model": "m2_studio"}
 {"at": "2026-10-31T10:55:35+00:00", "call": "task_done", "task_id": "Aj22hbCOdUQtDZDWB4TtIASD0eYbnB7hiZFEWWMNDxbXiLEek1dP7TGqmTRECvWtaWDS9eILM6KP1umZGeEfHw", "task_status": "success", "waited": 6.0, "feature": "skin_tone", "model": "m2_studio"}
+{"at": "2026-10-31T11:14:58+00:00", "call": "file_create", "attempt": 0, "http": 200, "garment": "g1_long_wool_coat", "live": true, "wheels_marked": 4}
+{"at": "2026-10-31T11:14:59+00:00", "call": "file_put", "http": 200, "file": "photo.jpg", "bytes": 122115, "garment": "g1_long_wool_coat", "live": true, "wheels_marked": 4}
+{"at": "2026-10-31T11:14:59+00:00", "call": "file_create", "attempt": 0, "http": 200, "garment": "g1_long_wool_coat", "live": true, "wheels_marked": 4}
+{"at": "2026-10-31T11:15:00+00:00", "call": "file_put", "http": 200, "file": "g1_long_wool_coat.png", "bytes": 1396989, "garment": "g1_long_wool_coat", "live": true, "wheels_marked": 4}
+{"at": "2026-10-31T11:15:00+00:00", "call": "task_create", "http": 200, "task_id": "GkrTS_-cBDa_FEZkU1ECVN2Z0S7-gv1IR8lPTTaTKOn9cPMeIT6CcVVktw6ahvDNGi4M447Ki6l9hDTl1ySvww", "category": "full_body", "units": 2, "garment": "g1_long_wool_coat", "live": true, "wheels_marked": 4}
+{"at": "2026-10-31T11:15:04+00:00", "call": "task_poll", "attempt": 0, "http": 200, "garment": "g1_long_wool_coat", "live": true, "wheels_marked": 4}
+{"at": "2026-10-31T11:15:07+00:00", "call": "task_poll", "attempt": 0, "http": 200, "garment": "g1_long_wool_coat", "live": true, "wheels_marked": 4}
+{"at": "2026-10-31T11:15:10+00:00", "call": "task_poll", "attempt": 0, "http": 200, "garment": "g1_long_wool_coat", "live": true, "wheels_marked": 4}
+{"at": "2026-10-31T11:15:13+00:00", "call": "task_poll", "attempt": 0, "http": 200, "garment": "g1_long_wool_coat", "live": true, "wheels_marked": 4}
+{"at": "2026-10-31T11:15:13+00:00", "call": "task_done", "task_id": "GkrTS_-cBDa_FEZkU1ECVN2Z0S7-gv1IR8lPTTaTKOn9cPMeIT6CcVVktw6ahvDNGi4M447Ki6l9hDTl1ySvww", "task_status": "success", "waited": 12.0, "garment": "g1_long_wool_coat", "live": true, "wheels_marked": 4}
+{"at": "2026-10-31T11:15:14+00:00", "call": "result_get", "http": 200, "task_id": "GkrTS_-cBDa_FEZkU1ECVN2Z0S7-gv1IR8lPTTaTKOn9cPMeIT6CcVVktw6ahvDNGi4M447Ki6l9hDTl1ySvww", "bytes": 193287, "garment": "g1_long_wool_coat", "live": true, "wheels_marked": 4}
+{"at": "2026-10-31T11:15:16+00:00", "call": "file_create", "attempt": 0, "http": 200, "garment": "g4_crop_jacket", "live": true, "wheels_marked": 4}
+{"at": "2026-10-31T11:15:17+00:00", "call": "file_put", "http": 200, "file": "photo.jpg", "bytes": 122115, "garment": "g4_crop_jacket", "live": true, "wheels_marked": 4}
+{"at": "2026-10-31T11:15:17+00:00", "call": "file_create", "attempt": 0, "http": 200, "garment": "g4_crop_jacket", "live": true, "wheels_marked": 4}
+{"at": "2026-10-31T11:15:18+00:00", "call": "file_put", "http": 200, "file": "g4_crop_jacket.png", "bytes": 1418207, "garment": "g4_crop_jacket", "live": true, "wheels_marked": 4}
+{"at": "2026-10-31T11:15:19+00:00", "call": "task_create", "http": 200, "task_id": "cR2lar8lTbHL7UdiF69yoHeRshrrCg3pFl82UkXNRLnvwo_HXONJTiTguzFTXRHjGi4M447Ki6l9hDTl1ySvww", "category": "upper_body", "units": 2, "garment": "g4_crop_jacket", "live": true, "wheels_marked": 4}
+{"at": "2026-10-31T11:15:22+00:00", "call": "task_poll", "attempt": 0, "http": 200, "garment": "g4_crop_jacket", "live": true, "wheels_marked": 4}
+{"at": "2026-10-31T11:15:25+00:00", "call": "task_poll", "attempt": 0, "http": 200, "garment": "g4_crop_jacket", "live": true, "wheels_marked": 4}
+{"at": "2026-10-31T11:15:28+00:00", "call": "task_poll", "attempt": 0, "http": 200, "garment": "g4_crop_jacket", "live": true, "wheels_marked": 4}
+{"at": "2026-10-31T11:15:31+00:00", "call": "task_poll", "attempt": 0, "http": 200, "garment": "g4_crop_jacket", "live": true, "wheels_marked": 4}
+{"at": "2026-10-31T11:15:31+00:00", "call": "task_done", "task_id": "cR2lar8lTbHL7UdiF69yoHeRshrrCg3pFl82UkXNRLnvwo_HXONJTiTguzFTXRHjGi4M447Ki6l9hDTl1ySvww", "task_status": "success", "waited": 12.0, "garment": "g4_crop_jacket", "live": true, "wheels_marked": 4}
+{"at": "2026-10-31T11:15:32+00:00", "call": "result_get", "http": 200, "task_id": "cR2lar8lTbHL7UdiF69yoHeRshrrCg3pFl82UkXNRLnvwo_HXONJTiTguzFTXRHjGi4M447Ki6l9hDTl1ySvww", "bytes": 181493, "garment": "g4_crop_jacket", "live": true, "wheels_marked": 4}

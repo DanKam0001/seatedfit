@@ -13,7 +13,7 @@
   "face_ssim_pass": 0.8,
   "face_ssim_fail": 0.6,
   "hand_ssim_pass": 0.65,
-  "hand_ssim_fail": 0.4,
+  "hand_ssim_fail": 0.55,
   "hand_min_bare": 0.3,
   "change_pass": 0.01,
   "change_fail": 0.003

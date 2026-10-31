@@ -1,0 +1,16 @@
+{
+ "first_run": {
+  "counts": {"pass": 20, "warn": 14, "fail": 14, "no_render": 0},
+  "change_pass": 0.04, "change_fail": 0.01, "hand_ssim_pass": 0.65, "hand_ssim_fail": 0.40, "hands_scored_on": "whole hand box"
+ },
+ "changes": [
+  {"what": "change_pass 0.04 to 0.01, change_fail 0.01 to 0.003",
+   "why": "Five cells warned that the garment was barely applied. Viewing them showed all five were real try-ons in a colour close to the original clothes: m5 g4, g7, g8, m1 g5, m4 g5. The smallest real change in the matrix is 0.011."},
+  {"what": "hands scored only on pixels the garment does not cover; a box needs hand_min_bare 0.30 bare",
+   "why": "m1 g3 was refused because a sleeve correctly covered the wrist inside the hand box. A sleeve is not a damaged hand."},
+  {"what": "hand_ssim_fail 0.40 to 0.55",
+   "why": "After the sleeve fix, 10 of 24 planted hand damages only warned. The lowest real render hand score is 0.643, so 0.55 sits between real renders and damaged ones. All 24 are now caught. This limit was set using the planted set, so that result is not independent evidence."}
+ ],
+ "after": {"counts": {"pass": 32, "warn": 3, "fail": 13, "no_render": 0}},
+ "unchanged_from_first_values": ["clearance_pass 0.05", "clearance_fail 0.15", "chair_ssim_pass 0.80", "chair_ssim_fail 0.65", "damage_pass 0.04", "damage_fail 0.12", "edges_kept_fail 0.55", "face_ssim_pass 0.80", "face_ssim_fail 0.60"]
+}

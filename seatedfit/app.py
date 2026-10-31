@@ -68,10 +68,10 @@ def take_live_slot() -> bool:
 
 
 def live_client() -> YouCamClient | None:
-    """Live calls are logged next to the cap file, never in proof_results."""
+    """Live calls are logged next to the cap file unless LIVE_LEDGER names another."""
     if not os.environ.get("YOURCAM_API_KEY"):
         return None
-    return YouCamClient(ledger=_cap_file().with_suffix(".jsonl"), task_cap=10**9)
+    return YouCamClient(ledger=os.environ.get("LIVE_LEDGER") or _cap_file().with_suffix(".jsonl"), task_cap=10**9)
 
 
 FALLBACK = "Live try-ons are paused for today, so here are saved results from our sample models. Your photo was not stored."

@@ -617,3 +617,14 @@
 {"at": "2026-10-31T10:28:07+00:00", "call": "task_done", "task_id": "y_KarUNxIsCtGo_iuH0o62RCPsTS-mrVHrVnHaa1oOS6QT7uqFCaUO6yrsjtZYdSGi4M447Ki6l9hDTl1ySvww", "task_status": "success", "waited": 18.0, "model": "m6_side", "garment": "g8_puffer_long", "category": "full_body"}
 {"at": "2026-10-31T10:28:07+00:00", "call": "result_get", "http": 200, "task_id": "rV4Ab4V2FYEurnHNWDp28E6oNklnEKE3RiuF5-1MoXbJzkjIuUaZ7fo6CJveYVhPGi4M447Ki6l9hDTl1ySvww", "bytes": 296273, "model": "m6_side", "garment": "g7_blazer", "category": "upper_body"}
 {"at": "2026-10-31T10:28:08+00:00", "call": "result_get", "http": 200, "task_id": "y_KarUNxIsCtGo_iuH0o62RCPsTS-mrVHrVnHaa1oOS6QT7uqFCaUO6yrsjtZYdSGi4M447Ki6l9hDTl1ySvww", "bytes": 288979, "model": "m6_side", "garment": "g8_puffer_long", "category": "full_body"}
+{"at": "2026-10-31T10:44:46+00:00", "call": "file_create", "attempt": 0, "http": 200, "garment": "g4_crop_jacket", "live": true}
+{"at": "2026-10-31T10:44:47+00:00", "call": "file_put", "http": 200, "file": "photo.jpg", "bytes": 220853, "garment": "g4_crop_jacket", "live": true}
+{"at": "2026-10-31T10:44:47+00:00", "call": "file_create", "attempt": 0, "http": 200, "garment": "g4_crop_jacket", "live": true}
+{"at": "2026-10-31T10:44:48+00:00", "call": "file_put", "http": 200, "file": "g4_crop_jacket.png", "bytes": 1418207, "garment": "g4_crop_jacket", "live": true}
+{"at": "2026-10-31T10:44:49+00:00", "call": "task_create", "http": 200, "task_id": "CO0FuaIfWYijDFvHvMv4PuzYcPaXqeS6ETZFuhAoSeVMq9Bz7DweIslInGhum6NhGi4M447Ki6l9hDTl1ySvww", "category": "upper_body", "garment": "g4_crop_jacket", "live": true}
+{"at": "2026-10-31T10:44:52+00:00", "call": "task_poll", "attempt": 0, "http": 200, "garment": "g4_crop_jacket", "live": true}
+{"at": "2026-10-31T10:44:55+00:00", "call": "task_poll", "attempt": 0, "http": 200, "garment": "g4_crop_jacket", "live": true}
+{"at": "2026-10-31T10:44:58+00:00", "call": "task_poll", "attempt": 0, "http": 200, "garment": "g4_crop_jacket", "live": true}
+{"at": "2026-10-31T10:45:01+00:00", "call": "task_poll", "attempt": 0, "http": 200, "garment": "g4_crop_jacket", "live": true}
+{"at": "2026-10-31T10:45:01+00:00", "call": "task_done", "task_id": "CO0FuaIfWYijDFvHvMv4PuzYcPaXqeS6ETZFuhAoSeVMq9Bz7DweIslInGhum6NhGi4M447Ki6l9hDTl1ySvww", "task_status": "success", "waited": 12.0, "garment": "g4_crop_jacket", "live": true}
+{"at": "2026-10-31T10:45:02+00:00", "call": "result_get", "http": 200, "task_id": "CO0FuaIfWYijDFvHvMv4PuzYcPaXqeS6ETZFuhAoSeVMq9Bz7DweIslInGhum6NhGi4M447Ki6l9hDTl1ySvww", "bytes": 320652, "garment": "g4_crop_jacket", "live": true}

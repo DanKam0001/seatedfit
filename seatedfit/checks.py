@@ -29,7 +29,7 @@ THRESHOLDS = {
     "face_ssim_pass": 0.80,
     "face_ssim_fail": 0.60,
     "hand_ssim_pass": 0.65,
-    "hand_ssim_fail": 0.40,
+    "hand_ssim_fail": 0.55,
     "hand_min_bare": 0.30,  # a hand box mostly under a sleeve is hidden, not altered
     "change_pass": 0.01,  # share of the frame that changed
     "change_fail": 0.003,
@@ -128,7 +128,7 @@ def check_change(changed, regions: Regions) -> Check:
 def check_chair(src, res, changed, covered, regions: Regions, ssim) -> Check:
     if not regions.wheels:
         return Check("chair", "Wheelchair intact", "not_measured", None, "similarity",
-                     "We could not find the wheels in this photo, so we could not check the chair.", {})
+                     "We can only measure the chair on our sample photos so far. Please look at it yourself.", {})
     visible = regions.chair_mask & ~cv2.dilate(covered.astype(np.uint8), np.ones((9, 9), np.uint8)).astype(bool)
     if visible.sum() < 200:
         return Check("chair", "Wheelchair intact", "warn", None, "similarity",
@@ -170,7 +170,7 @@ def skin_in_source(src_lab, regions: Regions) -> np.ndarray:
 def check_clearance(covered, regions: Regions, skin) -> Check:
     if not regions.wheels:
         return Check("clearance", "Wheel clearance", "not_measured", None, "share of wheel",
-                     "We could not find the wheels in this photo, so we could not measure clearance.", {})
+                     "We can only measure wheel clearance on our sample photos so far. Please look at your wheels yourself.", {})
     shares = []
     for w in regions.wheels:
         m = w.mask(regions.shape) & ~skin

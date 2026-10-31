@@ -1,8 +1,8 @@
 """Find the regions the render check looks at, from the source photo alone.
 
-Sample models use regions marked by eye (assets/regions.json). Uploads use
-locate_auto, which only returns wheels it can verify against the photo's edges;
-when it can't, the clearance check says "not measured" rather than guess.
+Sample models use regions marked by eye (assets/regions.json). Uploads get a
+face only: find_wheels scored too poorly to trust (proof_results/locator_eval.json),
+so the wheel checks on an upload say "not measured" rather than guess.
 """
 from __future__ import annotations
 
@@ -132,7 +132,7 @@ def find_wheels(rgb: np.ndarray) -> list:
 
 def locate_auto(rgb: np.ndarray) -> Regions:
     faces = find_faces(rgb)
-    return Regions(rgb.shape, "auto", face=faces[0] if faces else None, wheels=find_wheels(rgb))
+    return Regions(rgb.shape, "auto", face=faces[0] if faces else None)
 
 
 def locate_marked(model: str, rgb: np.ndarray) -> Regions:

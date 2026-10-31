@@ -17,7 +17,6 @@ def check_photo(rgb: np.ndarray, size_ok=True) -> dict:
     h, w = rgb.shape[:2]
     work = R.to_work(rgb)
     faces = R.find_faces(work)
-    wheels = R.find_wheels(work)
     hw = work.shape[0]
     face_share = faces[0][3] / hw if faces else 0.0
     head_in_frame = bool(faces) and faces[0][1] > hw * 0.01
@@ -30,9 +29,9 @@ def check_photo(rgb: np.ndarray, size_ok=True) -> dict:
               "We can't see a face. Please face the camera with nothing covering your face."),
         _item("big_enough", "Big enough in the picture", face_share >= MIN_FACE_SHARE, "You fill enough of the picture.",
               "You look small in this photo. Please move closer."),
-        _item("in_frame", "Head to wheels in frame", head_in_frame and len(wheels) >= 1,
-              "We can see you and the wheels.",
-              "We couldn't confirm your head and wheels are both in the picture, so wheel checks may be missing.",
+        _item("in_frame", "Whole body in frame", head_in_frame,
+              "Your head is in the picture. Please make sure your wheels are too.",
+              "Your head looks cut off. Please include your whole body and your wheels.",
               soft=True),
     ]
     ok = all(i["status"] != "fail" for i in items)

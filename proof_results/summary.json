@@ -1,0 +1,49 @@
+{
+ "ledger_rows": 630,
+ "tasks_created": 50,
+ "tasks_succeeded": 49,
+ "tasks_failed": 0,
+ "error_codes": {},
+ "median_wait_seconds": 15.0,
+ "counts": {
+  "pass": 32,
+  "warn": 3,
+  "fail": 13,
+  "no_render": 0
+ },
+ "cells_total": 48,
+ "verdicts_by_length": {
+  "long": {
+   "fail": 13,
+   "pass": 8,
+   "warn": 3
+  },
+  "short": {
+   "pass": 24
+  }
+ },
+ "evidence": {
+  "clearance_short_max": 0.0469,
+  "clearance_long_max": 0.8098,
+  "clearance_values_warn": [
+   0.0698,
+   0.0754,
+   0.1269
+  ],
+  "clearance_lowest_fail": 0.1549,
+  "change_min": 0.011,
+  "chair_ssim_min": 0.665,
+  "face_ssim_min": 0.847,
+  "hand_ssim_min": 0.643
+ },
+ "demo_pair": {
+  "g1_long_wool_coat": {
+   "verdict": "fail",
+   "clearance": 0.593
+  },
+  "g4_crop_jacket": {
+   "verdict": "pass",
+   "clearance": 0.0
+  }
+ }
+}

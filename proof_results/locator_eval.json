@@ -1,0 +1,51 @@
+{
+ "decision": "Too unreliable to use. Uploads report wheel checks as not measured and can never pass.",
+ "match_rule": "overlap over union of at least 0.5 with a hand-marked wheel",
+ "marked": 23,
+ "found": 2,
+ "false_positives": 15,
+ "rows": [
+  {
+   "model": "m1_studio",
+   "marked_wheels": 4,
+   "auto_found": 0,
+   "auto_returned": 2,
+   "false_positives": 0
+  },
+  {
+   "model": "m2_studio",
+   "marked_wheels": 4,
+   "auto_found": 0,
+   "auto_returned": 4,
+   "false_positives": 1
+  },
+  {
+   "model": "m3_home",
+   "marked_wheels": 4,
+   "auto_found": 0,
+   "auto_returned": 7,
+   "false_positives": 6
+  },
+  {
+   "model": "m4_home",
+   "marked_wheels": 4,
+   "auto_found": 0,
+   "auto_returned": 1,
+   "false_positives": 1
+  },
+  {
+   "model": "m5_outdoor",
+   "marked_wheels": 4,
+   "auto_found": 0,
+   "auto_returned": 4,
+   "false_positives": 3
+  },
+  {
+   "model": "m6_side",
+   "marked_wheels": 3,
+   "auto_found": 2,
+   "auto_returned": 9,
+   "false_positives": 4
+  }
+ ]
+}

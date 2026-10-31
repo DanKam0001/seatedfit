@@ -114,7 +114,7 @@ async function runLive() {
   const box = $("#result");
   const btn = $("#run-live");
   btn.disabled = true;
-  box.innerHTML = "<p>Making your try-on. This takes about half a minute.</p>";
+  box.innerHTML = "<p>Making your try-on. This can take a minute.</p>";
   $("#result-step h2").scrollIntoView();
   const fd = new FormData();
   fd.append("photo", state.file);

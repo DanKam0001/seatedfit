@@ -1,0 +1,29 @@
+{
+ "http": 200,
+ "mode": "live",
+ "verdict": "warn",
+ "error": null,
+ "render_returned": true,
+ "checks": [
+  {
+   "id": "clearance",
+   "status": "not_measured",
+   "value": null
+  },
+  {
+   "id": "chair",
+   "status": "not_measured",
+   "value": null
+  },
+  {
+   "id": "person",
+   "status": "pass",
+   "value": 0.929
+  },
+  {
+   "id": "change",
+   "status": "pass",
+   "value": 0.0609
+  }
+ ]
+}

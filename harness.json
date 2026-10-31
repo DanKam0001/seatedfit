@@ -1,0 +1,6 @@
+{
+  "test": ".venv\\Scripts\\python.exe -m pytest -q",
+  "start": ".venv\\Scripts\\python.exe -m uvicorn seatedfit.app:app --host 127.0.0.1 --port {port}",
+  "health": "/api/health",
+  "proof": "proof_results"
+}

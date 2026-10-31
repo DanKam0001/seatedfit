@@ -628,3 +628,9 @@
 {"at": "2026-10-31T10:45:01+00:00", "call": "task_poll", "attempt": 0, "http": 200, "garment": "g4_crop_jacket", "live": true}
 {"at": "2026-10-31T10:45:01+00:00", "call": "task_done", "task_id": "CO0FuaIfWYijDFvHvMv4PuzYcPaXqeS6ETZFuhAoSeVMq9Bz7DweIslInGhum6NhGi4M447Ki6l9hDTl1ySvww", "task_status": "success", "waited": 12.0, "garment": "g4_crop_jacket", "live": true}
 {"at": "2026-10-31T10:45:02+00:00", "call": "result_get", "http": 200, "task_id": "CO0FuaIfWYijDFvHvMv4PuzYcPaXqeS6ETZFuhAoSeVMq9Bz7DweIslInGhum6NhGi4M447Ki6l9hDTl1ySvww", "bytes": 320652, "garment": "g4_crop_jacket", "live": true}
+{"at": "2026-10-31T10:55:28+00:00", "call": "file_create", "attempt": 0, "http": 200, "feature": "skin_tone", "model": "m2_studio"}
+{"at": "2026-10-31T10:55:29+00:00", "call": "file_put", "http": 200, "file": "face.jpg", "bytes": 43552, "feature": "skin_tone", "model": "m2_studio"}
+{"at": "2026-10-31T10:55:29+00:00", "call": "task_create", "http": 200, "task_id": "Aj22hbCOdUQtDZDWB4TtIASD0eYbnB7hiZFEWWMNDxbXiLEek1dP7TGqmTRECvWtaWDS9eILM6KP1umZGeEfHw", "units": 20, "feature": "skin_tone", "model": "m2_studio"}
+{"at": "2026-10-31T10:55:32+00:00", "call": "task_poll", "attempt": 0, "http": 200, "feature": "skin_tone", "model": "m2_studio"}
+{"at": "2026-10-31T10:55:35+00:00", "call": "task_poll", "attempt": 0, "http": 200, "feature": "skin_tone", "model": "m2_studio"}
+{"at": "2026-10-31T10:55:35+00:00", "call": "task_done", "task_id": "Aj22hbCOdUQtDZDWB4TtIASD0eYbnB7hiZFEWWMNDxbXiLEek1dP7TGqmTRECvWtaWDS9eILM6KP1umZGeEfHw", "task_status": "success", "waited": 6.0, "feature": "skin_tone", "model": "m2_studio"}

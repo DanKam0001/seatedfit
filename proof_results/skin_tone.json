@@ -1,0 +1,19 @@
+{
+ "m2_studio": {
+  "skin_color": "#74523c",
+  "colours": {
+   "eye_color": "#150d07",
+   "eye_color_name": "Brown",
+   "lip_color": "#a7736d",
+   "eyebrow_color": "#3e3834",
+   "skin_color": "#74523c",
+   "hair_color": "#B56637",
+   "hair_color_name": "Auburn"
+  },
+  "strictness": "low",
+  "attempts_before": [],
+  "local_reading": "#895946",
+  "units": 20,
+  "api": "POST /s2s/v2.0/task/skin-tone-analysis"
+ }
+}

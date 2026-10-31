@@ -18,6 +18,12 @@ import requests
 DEFAULT_BASE = "https://yce-api-01.makeupar.com"
 TASK_PATH = "/s2s/v2.0/task/cloth-v4"
 FILE_PATH = "/s2s/v2.0/file"
+TONE_FILE_PATH = "/s2s/v2.0/file/skin-tone-analysis"
+TONE_TASK_PATH = "/s2s/v2.0/task/skin-tone-analysis"
+TONE_STRICTNESS = "low"  # a seated photo is rarely dead level; the default of "high" refuses more of them
+# From GET /s2s/v2.0/credit/feature-cost, charged only when a task succeeds.
+TRY_ON_UNITS = 2
+TONE_UNITS = 20
 
 # Worth retrying. Everything else is a fact about the input or the account.
 TRANSIENT_HTTP = {408, 429, 500, 502, 503, 504}
@@ -120,11 +126,11 @@ class YouCamClient:
         self._files[key] = file_id
         return file_id
 
-    def upload_bytes(self, data: bytes, name: str, ctx=None) -> str:
+    def upload_bytes(self, data: bytes, name: str, ctx=None, path=FILE_PATH) -> str:
         ctx = ctx or {}
         ctype = "image/png" if name.lower().endswith(".png") else "image/jpeg"
         body = {"files": [{"content_type": ctype, "file_name": name, "file_size": len(data)}]}
-        j = self._api("POST", FILE_PATH, "file_create", ctx, json=body)
+        j = self._api("POST", path, "file_create", ctx, json=body)
         entry = j["data"]["files"][0]
         req = entry["requests"][0]
         put = self.http.put(req["url"], headers=req.get("headers") or {"Content-Type": ctype}, data=data, timeout=120)
@@ -133,30 +139,35 @@ class YouCamClient:
             raise YouCamError(f"upload_http_{put.status_code}")
         return entry["file_id"]
 
-    def create_task(self, src_id: str, ref_id: str, category: str, ctx=None) -> str:
-        ctx = ctx or {}
+    def _start(self, path: str, body: dict, ctx: dict) -> str:
+        """Every paid task starts here, so every one counts against the cap."""
         used = self.tasks_used()
         if used >= self.task_cap:
             self._log(call="task_refused_cap", used=used, **ctx)
             raise SpendStop("task_cap", f"{used} tasks already created")
-        body = {"src_file_id": src_id, "ref_file_id": ref_id, "garment_category": category}
-        j = self._api("POST", TASK_PATH, "task_create", ctx, json=body)
+        j = self._api("POST", path, "task_create", ctx, json=body)
         task_id = j["data"]["task_id"]
-        self._log(call="task_create", http=200, task_id=task_id, **{"category": category, **ctx})
+        self._log(call="task_create", http=200, task_id=task_id, **ctx)
         return task_id
 
+    def create_task(self, src_id: str, ref_id: str, category: str, ctx=None) -> str:
+        body = {"src_file_id": src_id, "ref_file_id": ref_id, "garment_category": category}
+        return self._start(TASK_PATH, body, {"category": category, "units": TRY_ON_UNITS, **(ctx or {})})
+
     def wait(self, task_id: str, ctx=None) -> str:
-        ctx = ctx or {}
+        return self._poll(TASK_PATH, task_id, ctx or {})["url"]
+
+    def _poll(self, path: str, task_id: str, ctx: dict) -> dict:
         waited = 0.0
         while waited < self.poll_timeout:
             self.sleep(self.poll_seconds)
             waited += self.poll_seconds
-            j = self._api("GET", f"{TASK_PATH}/{task_id}", "task_poll", ctx)
+            j = self._api("GET", f"{path}/{task_id}", "task_poll", ctx)
             data = j.get("data") or {}
             status = data.get("task_status")
             if status == "success":
                 self._log(call="task_done", task_id=task_id, task_status=status, waited=waited, **ctx)
-                return data["results"]["url"]
+                return data["results"]
             if status in ("error", "failed"):
                 code = data.get("error") or "task_error"
                 self._log(call="task_done", task_id=task_id, task_status=status, error_code=code,
@@ -177,6 +188,18 @@ class YouCamClient:
         if got.status_code != 200:
             raise YouCamError(f"download_http_{got.status_code}")
         return TryOn(got.content, task_id, round(time.time() - t0, 1))
+
+    def skin_tone(self, jpeg: bytes, ctx=None, strictness=TONE_STRICTNESS) -> dict:
+        """AI Face Skin Tone Analysis on a face crop. Returns the colours it measured."""
+        ctx = {"feature": "skin_tone", **(ctx or {})}
+        file_id = self.upload_bytes(jpeg, "face.jpg", ctx, TONE_FILE_PATH)
+        body = {"src_file_id": file_id, "face_angle_strictness_level": strictness}
+        task_id = self._start(TONE_TASK_PATH, body, {"units": TONE_UNITS, **ctx})
+        results = self._poll(TONE_TASK_PATH, task_id, ctx)
+        colours = results.get("color") or results
+        if not str(colours.get("skin_color", "")).startswith("#"):
+            raise YouCamError("no_skin_color", str(sorted(colours))[:200])
+        return colours
 
 
 def _error_code(r) -> str | None:

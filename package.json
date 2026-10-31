@@ -1,0 +1,9 @@
+{
+  "name": "seatedfit-a11y",
+  "private": true,
+  "license": "MIT",
+  "devDependencies": {
+    "@axe-core/playwright": "4.10.0",
+    "playwright": "1.48.2"
+  }
+}

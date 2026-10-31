@@ -1,0 +1,2436 @@
+{
+ "summary": {
+  "none": {
+   "runs": 24,
+   "caught": 24,
+   "missed": []
+  },
+  "chair_painted_out": {
+   "runs": 24,
+   "caught": 24,
+   "missed": []
+  },
+  "wheels_covered": {
+   "runs": 24,
+   "caught": 24,
+   "missed": []
+  },
+  "garment_unchanged": {
+   "runs": 24,
+   "caught": 24,
+   "missed": []
+  },
+  "face_altered": {
+   "runs": 24,
+   "caught": 24,
+   "missed": []
+  },
+  "hand_altered": {
+   "runs": 24,
+   "caught": 24,
+   "missed": []
+  }
+ },
+ "rows": [
+  {
+   "model": "m1_studio",
+   "garment": "g4_crop_jacket",
+   "plant": "none",
+   "expect_check": null,
+   "expect": "pass",
+   "verdict": "pass",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m1_studio",
+   "garment": "g4_crop_jacket",
+   "plant": "chair_painted_out",
+   "expect_check": "chair",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.41,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "fail",
+    "chair": "fail",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m1_studio",
+   "garment": "g4_crop_jacket",
+   "plant": "wheels_covered",
+   "expect_check": "clearance",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.6869,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "fail",
+    "chair": "fail",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m1_studio",
+   "garment": "g4_crop_jacket",
+   "plant": "garment_unchanged",
+   "expect_check": "change",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.0,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "fail"
+   }
+  },
+  {
+   "model": "m1_studio",
+   "garment": "g4_crop_jacket",
+   "plant": "face_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.432,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m1_studio",
+   "garment": "g4_crop_jacket",
+   "plant": "hand_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.958,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m1_studio",
+   "garment": "g5_shirt",
+   "plant": "none",
+   "expect_check": null,
+   "expect": "pass",
+   "verdict": "pass",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m1_studio",
+   "garment": "g5_shirt",
+   "plant": "chair_painted_out",
+   "expect_check": "chair",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.551,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "fail",
+    "chair": "fail",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m1_studio",
+   "garment": "g5_shirt",
+   "plant": "wheels_covered",
+   "expect_check": "clearance",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.9904,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "fail",
+    "chair": "pass",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m1_studio",
+   "garment": "g5_shirt",
+   "plant": "garment_unchanged",
+   "expect_check": "change",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.0,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "fail"
+   }
+  },
+  {
+   "model": "m1_studio",
+   "garment": "g5_shirt",
+   "plant": "face_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.43,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m1_studio",
+   "garment": "g5_shirt",
+   "plant": "hand_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.972,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "warn",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m1_studio",
+   "garment": "g6_knit",
+   "plant": "none",
+   "expect_check": null,
+   "expect": "pass",
+   "verdict": "pass",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m1_studio",
+   "garment": "g6_knit",
+   "plant": "chair_painted_out",
+   "expect_check": "chair",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.358,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "fail",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m1_studio",
+   "garment": "g6_knit",
+   "plant": "wheels_covered",
+   "expect_check": "clearance",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.9964,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "fail",
+    "chair": "pass",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m1_studio",
+   "garment": "g6_knit",
+   "plant": "garment_unchanged",
+   "expect_check": "change",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.0,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "fail"
+   }
+  },
+  {
+   "model": "m1_studio",
+   "garment": "g6_knit",
+   "plant": "face_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.431,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m1_studio",
+   "garment": "g6_knit",
+   "plant": "hand_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.972,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "warn",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m1_studio",
+   "garment": "g7_blazer",
+   "plant": "none",
+   "expect_check": null,
+   "expect": "pass",
+   "verdict": "pass",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m1_studio",
+   "garment": "g7_blazer",
+   "plant": "chair_painted_out",
+   "expect_check": "chair",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.411,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "fail",
+    "chair": "fail",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m1_studio",
+   "garment": "g7_blazer",
+   "plant": "wheels_covered",
+   "expect_check": "clearance",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.6664,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "fail",
+    "chair": "fail",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m1_studio",
+   "garment": "g7_blazer",
+   "plant": "garment_unchanged",
+   "expect_check": "change",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.0,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "fail"
+   }
+  },
+  {
+   "model": "m1_studio",
+   "garment": "g7_blazer",
+   "plant": "face_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.431,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m1_studio",
+   "garment": "g7_blazer",
+   "plant": "hand_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.965,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m2_studio",
+   "garment": "g4_crop_jacket",
+   "plant": "none",
+   "expect_check": null,
+   "expect": "pass",
+   "verdict": "pass",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m2_studio",
+   "garment": "g4_crop_jacket",
+   "plant": "chair_painted_out",
+   "expect_check": "chair",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.472,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "fail",
+    "chair": "fail",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m2_studio",
+   "garment": "g4_crop_jacket",
+   "plant": "wheels_covered",
+   "expect_check": "clearance",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.3285,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "fail",
+    "chair": "fail",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m2_studio",
+   "garment": "g4_crop_jacket",
+   "plant": "garment_unchanged",
+   "expect_check": "change",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.0,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "fail"
+   }
+  },
+  {
+   "model": "m2_studio",
+   "garment": "g4_crop_jacket",
+   "plant": "face_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.414,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m2_studio",
+   "garment": "g4_crop_jacket",
+   "plant": "hand_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.96,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m2_studio",
+   "garment": "g5_shirt",
+   "plant": "none",
+   "expect_check": null,
+   "expect": "pass",
+   "verdict": "pass",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m2_studio",
+   "garment": "g5_shirt",
+   "plant": "chair_painted_out",
+   "expect_check": "chair",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.482,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "fail",
+    "chair": "fail",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m2_studio",
+   "garment": "g5_shirt",
+   "plant": "wheels_covered",
+   "expect_check": "clearance",
+   "expect": "fail",
+   "got": "fail",
+   "value": 1.0,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "fail",
+    "chair": "pass",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m2_studio",
+   "garment": "g5_shirt",
+   "plant": "garment_unchanged",
+   "expect_check": "change",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.0,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "fail"
+   }
+  },
+  {
+   "model": "m2_studio",
+   "garment": "g5_shirt",
+   "plant": "face_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.415,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m2_studio",
+   "garment": "g5_shirt",
+   "plant": "hand_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.959,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m2_studio",
+   "garment": "g6_knit",
+   "plant": "none",
+   "expect_check": null,
+   "expect": "pass",
+   "verdict": "pass",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m2_studio",
+   "garment": "g6_knit",
+   "plant": "chair_painted_out",
+   "expect_check": "chair",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.397,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "fail",
+    "person": "warn",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m2_studio",
+   "garment": "g6_knit",
+   "plant": "wheels_covered",
+   "expect_check": "clearance",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.9998,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "fail",
+    "chair": "pass",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m2_studio",
+   "garment": "g6_knit",
+   "plant": "garment_unchanged",
+   "expect_check": "change",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.0,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "fail"
+   }
+  },
+  {
+   "model": "m2_studio",
+   "garment": "g6_knit",
+   "plant": "face_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.414,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m2_studio",
+   "garment": "g6_knit",
+   "plant": "hand_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.961,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "warn",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m2_studio",
+   "garment": "g7_blazer",
+   "plant": "none",
+   "expect_check": null,
+   "expect": "pass",
+   "verdict": "pass",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m2_studio",
+   "garment": "g7_blazer",
+   "plant": "chair_painted_out",
+   "expect_check": "chair",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.553,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "fail",
+    "chair": "fail",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m2_studio",
+   "garment": "g7_blazer",
+   "plant": "wheels_covered",
+   "expect_check": "clearance",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.3249,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "fail",
+    "chair": "fail",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m2_studio",
+   "garment": "g7_blazer",
+   "plant": "garment_unchanged",
+   "expect_check": "change",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.0,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "fail"
+   }
+  },
+  {
+   "model": "m2_studio",
+   "garment": "g7_blazer",
+   "plant": "face_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.414,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m2_studio",
+   "garment": "g7_blazer",
+   "plant": "hand_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.96,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m3_home",
+   "garment": "g4_crop_jacket",
+   "plant": "none",
+   "expect_check": null,
+   "expect": "pass",
+   "verdict": "pass",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m3_home",
+   "garment": "g4_crop_jacket",
+   "plant": "chair_painted_out",
+   "expect_check": "chair",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.443,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "fail",
+    "chair": "fail",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m3_home",
+   "garment": "g4_crop_jacket",
+   "plant": "wheels_covered",
+   "expect_check": "clearance",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.4931,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "fail",
+    "chair": "fail",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m3_home",
+   "garment": "g4_crop_jacket",
+   "plant": "garment_unchanged",
+   "expect_check": "change",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.0,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "fail"
+   }
+  },
+  {
+   "model": "m3_home",
+   "garment": "g4_crop_jacket",
+   "plant": "face_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.458,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m3_home",
+   "garment": "g4_crop_jacket",
+   "plant": "hand_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.933,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m3_home",
+   "garment": "g5_shirt",
+   "plant": "none",
+   "expect_check": null,
+   "expect": "pass",
+   "verdict": "pass",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m3_home",
+   "garment": "g5_shirt",
+   "plant": "chair_painted_out",
+   "expect_check": "chair",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.608,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "fail",
+    "chair": "fail",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m3_home",
+   "garment": "g5_shirt",
+   "plant": "wheels_covered",
+   "expect_check": "clearance",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.9999,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "fail",
+    "chair": "pass",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m3_home",
+   "garment": "g5_shirt",
+   "plant": "garment_unchanged",
+   "expect_check": "change",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.0,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "fail"
+   }
+  },
+  {
+   "model": "m3_home",
+   "garment": "g5_shirt",
+   "plant": "face_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.457,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m3_home",
+   "garment": "g5_shirt",
+   "plant": "hand_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.93,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m3_home",
+   "garment": "g6_knit",
+   "plant": "none",
+   "expect_check": null,
+   "expect": "pass",
+   "verdict": "pass",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m3_home",
+   "garment": "g6_knit",
+   "plant": "chair_painted_out",
+   "expect_check": "chair",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.376,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "fail",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m3_home",
+   "garment": "g6_knit",
+   "plant": "wheels_covered",
+   "expect_check": "clearance",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.9996,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "fail",
+    "chair": "pass",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m3_home",
+   "garment": "g6_knit",
+   "plant": "garment_unchanged",
+   "expect_check": "change",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.0,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "fail"
+   }
+  },
+  {
+   "model": "m3_home",
+   "garment": "g6_knit",
+   "plant": "face_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.459,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m3_home",
+   "garment": "g6_knit",
+   "plant": "hand_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.934,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m3_home",
+   "garment": "g7_blazer",
+   "plant": "none",
+   "expect_check": null,
+   "expect": "pass",
+   "verdict": "pass",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m3_home",
+   "garment": "g7_blazer",
+   "plant": "chair_painted_out",
+   "expect_check": "chair",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.448,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "fail",
+    "chair": "fail",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m3_home",
+   "garment": "g7_blazer",
+   "plant": "wheels_covered",
+   "expect_check": "clearance",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.4146,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "fail",
+    "chair": "fail",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m3_home",
+   "garment": "g7_blazer",
+   "plant": "garment_unchanged",
+   "expect_check": "change",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.0,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "fail"
+   }
+  },
+  {
+   "model": "m3_home",
+   "garment": "g7_blazer",
+   "plant": "face_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.459,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m3_home",
+   "garment": "g7_blazer",
+   "plant": "hand_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.934,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m4_home",
+   "garment": "g4_crop_jacket",
+   "plant": "none",
+   "expect_check": null,
+   "expect": "pass",
+   "verdict": "pass",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m4_home",
+   "garment": "g4_crop_jacket",
+   "plant": "chair_painted_out",
+   "expect_check": "chair",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.384,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "fail",
+    "chair": "fail",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m4_home",
+   "garment": "g4_crop_jacket",
+   "plant": "wheels_covered",
+   "expect_check": "clearance",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.5919,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "fail",
+    "chair": "fail",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m4_home",
+   "garment": "g4_crop_jacket",
+   "plant": "garment_unchanged",
+   "expect_check": "change",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.0,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "fail"
+   }
+  },
+  {
+   "model": "m4_home",
+   "garment": "g4_crop_jacket",
+   "plant": "face_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.581,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m4_home",
+   "garment": "g4_crop_jacket",
+   "plant": "hand_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.951,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m4_home",
+   "garment": "g5_shirt",
+   "plant": "none",
+   "expect_check": null,
+   "expect": "pass",
+   "verdict": "pass",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m4_home",
+   "garment": "g5_shirt",
+   "plant": "chair_painted_out",
+   "expect_check": "chair",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.576,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "fail",
+    "chair": "fail",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m4_home",
+   "garment": "g5_shirt",
+   "plant": "wheels_covered",
+   "expect_check": "clearance",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.9766,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "fail",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m4_home",
+   "garment": "g5_shirt",
+   "plant": "garment_unchanged",
+   "expect_check": "change",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.0,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "fail"
+   }
+  },
+  {
+   "model": "m4_home",
+   "garment": "g5_shirt",
+   "plant": "face_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.581,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m4_home",
+   "garment": "g5_shirt",
+   "plant": "hand_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.95,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m4_home",
+   "garment": "g6_knit",
+   "plant": "none",
+   "expect_check": null,
+   "expect": "pass",
+   "verdict": "pass",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m4_home",
+   "garment": "g6_knit",
+   "plant": "chair_painted_out",
+   "expect_check": "chair",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.314,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "fail",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m4_home",
+   "garment": "g6_knit",
+   "plant": "wheels_covered",
+   "expect_check": "clearance",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.9898,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "fail",
+    "chair": "pass",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m4_home",
+   "garment": "g6_knit",
+   "plant": "garment_unchanged",
+   "expect_check": "change",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.0,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "fail"
+   }
+  },
+  {
+   "model": "m4_home",
+   "garment": "g6_knit",
+   "plant": "face_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.581,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m4_home",
+   "garment": "g6_knit",
+   "plant": "hand_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.951,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m4_home",
+   "garment": "g7_blazer",
+   "plant": "none",
+   "expect_check": null,
+   "expect": "pass",
+   "verdict": "pass",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m4_home",
+   "garment": "g7_blazer",
+   "plant": "chair_painted_out",
+   "expect_check": "chair",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.366,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "fail",
+    "chair": "fail",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m4_home",
+   "garment": "g7_blazer",
+   "plant": "wheels_covered",
+   "expect_check": "clearance",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.5943,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "fail",
+    "chair": "fail",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m4_home",
+   "garment": "g7_blazer",
+   "plant": "garment_unchanged",
+   "expect_check": "change",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.0,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "fail"
+   }
+  },
+  {
+   "model": "m4_home",
+   "garment": "g7_blazer",
+   "plant": "face_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.581,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m4_home",
+   "garment": "g7_blazer",
+   "plant": "hand_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.953,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m5_outdoor",
+   "garment": "g4_crop_jacket",
+   "plant": "none",
+   "expect_check": null,
+   "expect": "pass",
+   "verdict": "pass",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m5_outdoor",
+   "garment": "g4_crop_jacket",
+   "plant": "chair_painted_out",
+   "expect_check": "chair",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.478,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "fail",
+    "chair": "fail",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m5_outdoor",
+   "garment": "g4_crop_jacket",
+   "plant": "wheels_covered",
+   "expect_check": "clearance",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.445,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "fail",
+    "chair": "fail",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m5_outdoor",
+   "garment": "g4_crop_jacket",
+   "plant": "garment_unchanged",
+   "expect_check": "change",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.0,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "fail"
+   }
+  },
+  {
+   "model": "m5_outdoor",
+   "garment": "g4_crop_jacket",
+   "plant": "face_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.475,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m5_outdoor",
+   "garment": "g4_crop_jacket",
+   "plant": "hand_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.932,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m5_outdoor",
+   "garment": "g5_shirt",
+   "plant": "none",
+   "expect_check": null,
+   "expect": "pass",
+   "verdict": "pass",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m5_outdoor",
+   "garment": "g5_shirt",
+   "plant": "chair_painted_out",
+   "expect_check": "chair",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.624,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "fail",
+    "chair": "fail",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m5_outdoor",
+   "garment": "g5_shirt",
+   "plant": "wheels_covered",
+   "expect_check": "clearance",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.9941,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "fail",
+    "chair": "pass",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m5_outdoor",
+   "garment": "g5_shirt",
+   "plant": "garment_unchanged",
+   "expect_check": "change",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.0,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "fail"
+   }
+  },
+  {
+   "model": "m5_outdoor",
+   "garment": "g5_shirt",
+   "plant": "face_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.474,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m5_outdoor",
+   "garment": "g5_shirt",
+   "plant": "hand_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.917,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m5_outdoor",
+   "garment": "g6_knit",
+   "plant": "none",
+   "expect_check": null,
+   "expect": "pass",
+   "verdict": "pass",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m5_outdoor",
+   "garment": "g6_knit",
+   "plant": "chair_painted_out",
+   "expect_check": "chair",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.387,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "fail",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m5_outdoor",
+   "garment": "g6_knit",
+   "plant": "wheels_covered",
+   "expect_check": "clearance",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.9941,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "fail",
+    "chair": "pass",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m5_outdoor",
+   "garment": "g6_knit",
+   "plant": "garment_unchanged",
+   "expect_check": "change",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.0,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "fail"
+   }
+  },
+  {
+   "model": "m5_outdoor",
+   "garment": "g6_knit",
+   "plant": "face_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.476,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m5_outdoor",
+   "garment": "g6_knit",
+   "plant": "hand_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.938,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m5_outdoor",
+   "garment": "g7_blazer",
+   "plant": "none",
+   "expect_check": null,
+   "expect": "pass",
+   "verdict": "pass",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m5_outdoor",
+   "garment": "g7_blazer",
+   "plant": "chair_painted_out",
+   "expect_check": "chair",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.469,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "fail",
+    "chair": "fail",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m5_outdoor",
+   "garment": "g7_blazer",
+   "plant": "wheels_covered",
+   "expect_check": "clearance",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.7155,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "fail",
+    "chair": "fail",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m5_outdoor",
+   "garment": "g7_blazer",
+   "plant": "garment_unchanged",
+   "expect_check": "change",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.0,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "fail"
+   }
+  },
+  {
+   "model": "m5_outdoor",
+   "garment": "g7_blazer",
+   "plant": "face_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.476,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m5_outdoor",
+   "garment": "g7_blazer",
+   "plant": "hand_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.934,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m6_side",
+   "garment": "g4_crop_jacket",
+   "plant": "none",
+   "expect_check": null,
+   "expect": "pass",
+   "verdict": "pass",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m6_side",
+   "garment": "g4_crop_jacket",
+   "plant": "chair_painted_out",
+   "expect_check": "chair",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.438,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "warn",
+    "chair": "fail",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m6_side",
+   "garment": "g4_crop_jacket",
+   "plant": "wheels_covered",
+   "expect_check": "clearance",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.5916,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "fail",
+    "chair": "fail",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m6_side",
+   "garment": "g4_crop_jacket",
+   "plant": "garment_unchanged",
+   "expect_check": "change",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.0,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "fail"
+   }
+  },
+  {
+   "model": "m6_side",
+   "garment": "g4_crop_jacket",
+   "plant": "face_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.548,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m6_side",
+   "garment": "g4_crop_jacket",
+   "plant": "hand_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.918,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m6_side",
+   "garment": "g5_shirt",
+   "plant": "none",
+   "expect_check": null,
+   "expect": "pass",
+   "verdict": "pass",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m6_side",
+   "garment": "g5_shirt",
+   "plant": "chair_painted_out",
+   "expect_check": "chair",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.466,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "fail",
+    "chair": "fail",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m6_side",
+   "garment": "g5_shirt",
+   "plant": "wheels_covered",
+   "expect_check": "clearance",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.9993,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "fail",
+    "chair": "pass",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m6_side",
+   "garment": "g5_shirt",
+   "plant": "garment_unchanged",
+   "expect_check": "change",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.0,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "fail"
+   }
+  },
+  {
+   "model": "m6_side",
+   "garment": "g5_shirt",
+   "plant": "face_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.548,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m6_side",
+   "garment": "g5_shirt",
+   "plant": "hand_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.915,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m6_side",
+   "garment": "g6_knit",
+   "plant": "none",
+   "expect_check": null,
+   "expect": "pass",
+   "verdict": "pass",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m6_side",
+   "garment": "g6_knit",
+   "plant": "chair_painted_out",
+   "expect_check": "chair",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.398,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "fail",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m6_side",
+   "garment": "g6_knit",
+   "plant": "wheels_covered",
+   "expect_check": "clearance",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.9999,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "fail",
+    "chair": "pass",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m6_side",
+   "garment": "g6_knit",
+   "plant": "garment_unchanged",
+   "expect_check": "change",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.0,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "fail"
+   }
+  },
+  {
+   "model": "m6_side",
+   "garment": "g6_knit",
+   "plant": "face_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.548,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m6_side",
+   "garment": "g6_knit",
+   "plant": "hand_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.917,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m6_side",
+   "garment": "g7_blazer",
+   "plant": "none",
+   "expect_check": null,
+   "expect": "pass",
+   "verdict": "pass",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m6_side",
+   "garment": "g7_blazer",
+   "plant": "chair_painted_out",
+   "expect_check": "chair",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.431,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "warn",
+    "chair": "fail",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m6_side",
+   "garment": "g7_blazer",
+   "plant": "wheels_covered",
+   "expect_check": "clearance",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.5903,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "fail",
+    "chair": "fail",
+    "person": "pass",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m6_side",
+   "garment": "g7_blazer",
+   "plant": "garment_unchanged",
+   "expect_check": "change",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.0,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "pass",
+    "change": "fail"
+   }
+  },
+  {
+   "model": "m6_side",
+   "garment": "g7_blazer",
+   "plant": "face_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.548,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  },
+  {
+   "model": "m6_side",
+   "garment": "g7_blazer",
+   "plant": "hand_altered",
+   "expect_check": "person",
+   "expect": "fail",
+   "got": "fail",
+   "value": 0.918,
+   "verdict": "fail",
+   "caught": true,
+   "statuses": {
+    "clearance": "pass",
+    "chair": "pass",
+    "person": "fail",
+    "change": "pass"
+   }
+  }
+ ]
+}

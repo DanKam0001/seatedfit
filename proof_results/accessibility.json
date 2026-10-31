@@ -1,0 +1,84 @@
+{
+ "tool": "axe-core via @axe-core/playwright",
+ "tags": [
+  "wcag2a",
+  "wcag2aa",
+  "wcag21a",
+  "wcag21aa"
+ ],
+ "pages": [
+  {
+   "view": "shop",
+   "width": 1280,
+   "violations": 0,
+   "passes": 22,
+   "incomplete": [],
+   "horizontal_overflow": false,
+   "details": []
+  },
+  {
+   "view": "retail",
+   "width": 1280,
+   "violations": 0,
+   "passes": 27,
+   "incomplete": [],
+   "horizontal_overflow": false,
+   "details": []
+  },
+  {
+   "view": "how",
+   "width": 1280,
+   "violations": 0,
+   "passes": 18,
+   "incomplete": [],
+   "horizontal_overflow": false,
+   "details": []
+  },
+  {
+   "view": "script errors",
+   "width": 1280,
+   "errors": []
+  },
+  {
+   "view": "shop",
+   "width": 390,
+   "violations": 0,
+   "passes": 22,
+   "incomplete": [],
+   "horizontal_overflow": false,
+   "details": []
+  },
+  {
+   "view": "retail",
+   "width": 390,
+   "violations": 0,
+   "passes": 28,
+   "incomplete": [
+    "color-contrast"
+   ],
+   "horizontal_overflow": false,
+   "details": []
+  },
+  {
+   "view": "how",
+   "width": 390,
+   "violations": 0,
+   "passes": 18,
+   "incomplete": [],
+   "horizontal_overflow": false,
+   "details": []
+  },
+  {
+   "view": "script errors",
+   "width": 390,
+   "errors": []
+  }
+ ],
+ "keyboard": {
+  "dialog_opens_with_enter": true,
+  "dialog_closes_with_escape": true,
+  "arrow_keys_change_garment": true,
+  "focus_outline_style": "solid",
+  "images_without_alt": 0
+ }
+}

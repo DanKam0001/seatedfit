@@ -1,0 +1,36 @@
+{"at": "2026-10-31T10:20:43+00:00", "call": "file_put", "http": 200, "file": "m1_studio.png", "bytes": 1326210, "model": "m1_studio", "garment": "g1_long_wool_coat", "category": "full_body"}
+{"at": "2026-10-31T10:20:44+00:00", "call": "file_put", "http": 200, "file": "g1_long_wool_coat.png", "bytes": 1396989, "model": "m1_studio", "garment": "g1_long_wool_coat", "category": "full_body"}
+{"at": "2026-10-31T10:20:45+00:00", "call": "task_create", "http": 200, "task_id": "unknown-lost-to-logging-bug", "model": "m1_studio", "garment": "g1_long_wool_coat", "category": "full_body", "note": "Correction row added by hand: client crashed logging this call after the POST returned, so the task was probably charged and its id and result were lost."}
+{"at": "2026-10-31T10:21:01+00:00", "call": "file_create", "attempt": 0, "http": 200, "model": "m1_studio", "garment": "g1_long_wool_coat", "category": "full_body"}
+{"at": "2026-10-31T10:21:03+00:00", "call": "file_put", "http": 200, "file": "m1_studio.png", "bytes": 1326210, "model": "m1_studio", "garment": "g1_long_wool_coat", "category": "full_body"}
+{"at": "2026-10-31T10:21:03+00:00", "call": "file_create", "attempt": 0, "http": 200, "model": "m1_studio", "garment": "g1_long_wool_coat", "category": "full_body"}
+{"at": "2026-10-31T10:21:04+00:00", "call": "file_put", "http": 200, "file": "g1_long_wool_coat.png", "bytes": 1396989, "model": "m1_studio", "garment": "g1_long_wool_coat", "category": "full_body"}
+{"at": "2026-10-31T10:21:04+00:00", "call": "task_create", "http": 200, "task_id": "CFdHY1o_-F_0hVkE4RNC4QSGjt-ReTjzCJhLcm6Vf8ypGdmGfgDx6c9EEGdd5rP-Gi4M447Ki6l9hDTl1ySvww", "category": "full_body", "model": "m1_studio", "garment": "g1_long_wool_coat"}
+{"at": "2026-10-31T10:21:07+00:00", "call": "task_poll", "attempt": 0, "http": 200, "model": "m1_studio", "garment": "g1_long_wool_coat", "category": "full_body"}
+{"at": "2026-10-31T10:21:11+00:00", "call": "task_poll", "attempt": 0, "http": 200, "model": "m1_studio", "garment": "g1_long_wool_coat", "category": "full_body"}
+{"at": "2026-10-31T10:21:14+00:00", "call": "task_poll", "attempt": 0, "http": 200, "model": "m1_studio", "garment": "g1_long_wool_coat", "category": "full_body"}
+{"at": "2026-10-31T10:21:17+00:00", "call": "task_poll", "attempt": 0, "http": 200, "model": "m1_studio", "garment": "g1_long_wool_coat", "category": "full_body"}
+{"at": "2026-10-31T10:21:17+00:00", "call": "task_done", "task_id": "CFdHY1o_-F_0hVkE4RNC4QSGjt-ReTjzCJhLcm6Vf8ypGdmGfgDx6c9EEGdd5rP-Gi4M447Ki6l9hDTl1ySvww", "task_status": "success", "waited": 12.0, "model": "m1_studio", "garment": "g1_long_wool_coat", "category": "full_body"}
+{"at": "2026-10-31T10:21:18+00:00", "call": "result_get", "http": 200, "task_id": "CFdHY1o_-F_0hVkE4RNC4QSGjt-ReTjzCJhLcm6Vf8ypGdmGfgDx6c9EEGdd5rP-Gi4M447Ki6l9hDTl1ySvww", "bytes": 205282, "model": "m1_studio", "garment": "g1_long_wool_coat", "category": "full_body"}
+{"at": "2026-10-31T10:21:21+00:00", "call": "file_create", "attempt": 0, "http": 200, "model": "m1_studio", "garment": "g4_crop_jacket", "category": "upper_body"}
+{"at": "2026-10-31T10:21:23+00:00", "call": "file_put", "http": 200, "file": "m1_studio.png", "bytes": 1326210, "model": "m1_studio", "garment": "g4_crop_jacket", "category": "upper_body"}
+{"at": "2026-10-31T10:21:23+00:00", "call": "file_create", "attempt": 0, "http": 200, "model": "m1_studio", "garment": "g4_crop_jacket", "category": "upper_body"}
+{"at": "2026-10-31T10:21:25+00:00", "call": "file_put", "http": 200, "file": "g4_crop_jacket.png", "bytes": 1418207, "model": "m1_studio", "garment": "g4_crop_jacket", "category": "upper_body"}
+{"at": "2026-10-31T10:21:25+00:00", "call": "task_create", "http": 200, "task_id": "CSazmQru57TP78RWVt3eWT8aaR0Prjt5HqxP_3ztwuHK0tQ1Wupb7JIKLZ5dRNqjGi4M447Ki6l9hDTl1ySvww", "category": "upper_body", "model": "m1_studio", "garment": "g4_crop_jacket"}
+{"at": "2026-10-31T10:21:28+00:00", "call": "task_poll", "attempt": 0, "http": 200, "model": "m1_studio", "garment": "g4_crop_jacket", "category": "upper_body"}
+{"at": "2026-10-31T10:21:31+00:00", "call": "task_poll", "attempt": 0, "http": 200, "model": "m1_studio", "garment": "g4_crop_jacket", "category": "upper_body"}
+{"at": "2026-10-31T10:21:33+00:00", "call": "task_poll", "attempt": 0, "http": 200, "model": "m1_studio", "garment": "g4_crop_jacket", "category": "upper_body"}
+{"at": "2026-10-31T10:21:36+00:00", "call": "task_poll", "attempt": 0, "http": 200, "model": "m1_studio", "garment": "g4_crop_jacket", "category": "upper_body"}
+{"at": "2026-10-31T10:21:36+00:00", "call": "task_done", "task_id": "CSazmQru57TP78RWVt3eWT8aaR0Prjt5HqxP_3ztwuHK0tQ1Wupb7JIKLZ5dRNqjGi4M447Ki6l9hDTl1ySvww", "task_status": "success", "waited": 12.0, "model": "m1_studio", "garment": "g4_crop_jacket", "category": "upper_body"}
+{"at": "2026-10-31T10:21:37+00:00", "call": "result_get", "http": 200, "task_id": "CSazmQru57TP78RWVt3eWT8aaR0Prjt5HqxP_3ztwuHK0tQ1Wupb7JIKLZ5dRNqjGi4M447Ki6l9hDTl1ySvww", "bytes": 190094, "model": "m1_studio", "garment": "g4_crop_jacket", "category": "upper_body"}
+{"at": "2026-10-31T10:21:39+00:00", "call": "file_create", "attempt": 0, "http": 200, "model": "m6_side", "garment": "g1_long_wool_coat", "category": "full_body"}
+{"at": "2026-10-31T10:21:40+00:00", "call": "file_put", "http": 200, "file": "m6_side.png", "bytes": 1652027, "model": "m6_side", "garment": "g1_long_wool_coat", "category": "full_body"}
+{"at": "2026-10-31T10:21:40+00:00", "call": "file_create", "attempt": 0, "http": 200, "model": "m6_side", "garment": "g1_long_wool_coat", "category": "full_body"}
+{"at": "2026-10-31T10:21:41+00:00", "call": "file_put", "http": 200, "file": "g1_long_wool_coat.png", "bytes": 1396989, "model": "m6_side", "garment": "g1_long_wool_coat", "category": "full_body"}
+{"at": "2026-10-31T10:21:41+00:00", "call": "task_create", "http": 200, "task_id": "9mhQ4CK0CAhtGn1zQ0hH7lNN6Aq4nwb1nL0eM46F92dtmAL__A5jfJ_Nc5vTLfGAGi4M447Ki6l9hDTl1ySvww", "category": "full_body", "model": "m6_side", "garment": "g1_long_wool_coat"}
+{"at": "2026-10-31T10:21:44+00:00", "call": "task_poll", "attempt": 0, "http": 200, "model": "m6_side", "garment": "g1_long_wool_coat", "category": "full_body"}
+{"at": "2026-10-31T10:21:47+00:00", "call": "task_poll", "attempt": 0, "http": 200, "model": "m6_side", "garment": "g1_long_wool_coat", "category": "full_body"}
+{"at": "2026-10-31T10:21:51+00:00", "call": "task_poll", "attempt": 0, "http": 200, "model": "m6_side", "garment": "g1_long_wool_coat", "category": "full_body"}
+{"at": "2026-10-31T10:21:54+00:00", "call": "task_poll", "attempt": 0, "http": 200, "model": "m6_side", "garment": "g1_long_wool_coat", "category": "full_body"}
+{"at": "2026-10-31T10:21:54+00:00", "call": "task_done", "task_id": "9mhQ4CK0CAhtGn1zQ0hH7lNN6Aq4nwb1nL0eM46F92dtmAL__A5jfJ_Nc5vTLfGAGi4M447Ki6l9hDTl1ySvww", "task_status": "success", "waited": 12.0, "model": "m6_side", "garment": "g1_long_wool_coat", "category": "full_body"}
+{"at": "2026-10-31T10:21:54+00:00", "call": "result_get", "http": 200, "task_id": "9mhQ4CK0CAhtGn1zQ0hH7lNN6Aq4nwb1nL0eM46F92dtmAL__A5jfJ_Nc5vTLfGAGi4M447Ki6l9hDTl1ySvww", "bytes": 310469, "model": "m6_side", "garment": "g1_long_wool_coat", "category": "full_body"}

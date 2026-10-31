@@ -1,0 +1,13 @@
+{
+ "sponsor": "YouCam",
+ "summary": "Perfect Corp YouCam API: skin analysis and virtual try-on through file upload, task, poll, result.",
+ "aliases": [
+  "youcam",
+  "perfect corp",
+  "perfectcorp",
+  "makeupar"
+ ],
+ "env_key": "YOURCAM_API_KEY",
+ "meter": "none",
+ "default_cap_usd": 20
+}

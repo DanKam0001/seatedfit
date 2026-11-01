@@ -1,0 +1,50 @@
+[
+ {
+  "model": "chair_woman",
+  "category": "full_body",
+  "start": 200,
+  "status": "success",
+  "error": null,
+  "file": "seated_chair_woman_full_body.jpg"
+ },
+ {
+  "model": "chair_woman",
+  "category": "upper_body",
+  "start": 200,
+  "status": "success",
+  "error": null,
+  "file": "seated_chair_woman_upper_body.jpg"
+ },
+ {
+  "model": "wheelchair_man",
+  "category": "full_body",
+  "start": 200,
+  "status": "success",
+  "error": null,
+  "file": "seated_wheelchair_man_full_body.jpg"
+ },
+ {
+  "model": "wheelchair_man",
+  "category": "upper_body",
+  "start": 200,
+  "status": "success",
+  "error": null,
+  "file": "seated_wheelchair_man_upper_body.jpg"
+ },
+ {
+  "model": "wheelchair_woman",
+  "category": "full_body",
+  "start": 200,
+  "status": "success",
+  "error": null,
+  "file": "seated_wheelchair_woman_full_body.jpg"
+ },
+ {
+  "model": "wheelchair_woman",
+  "category": "upper_body",
+  "start": 200,
+  "status": "success",
+  "error": null,
+  "file": "seated_wheelchair_woman_upper_body.jpg"
+ }
+]
